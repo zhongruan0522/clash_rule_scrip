@@ -2,13 +2,21 @@ name: Build Clash rule packs
 
 on:
   schedule:
-    - cron: "20 21 * * *"
+    # Asia/Shanghai 08:00, 12:00, 16:00, 20:00.
+    - cron: "0 0 * * *"
+    - cron: "0 4 * * *"
+    - cron: "0 8 * * *"
+    - cron: "0 12 * * *"
   workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - "custom/**"
+      - "custom/upstream.yml"
+      - "custom/block.yaml"
+      - "custom/clean-node.yaml"
+      - "custom/foreign-line.yaml"
+      - "custom/china-direct.yaml"
       - "scripts/build_rules.py"
       - ".github/workflows/build-rules.yml"
 
@@ -39,10 +47,11 @@ jobs:
 
       - name: Commit refreshed packs
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain -- dist)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add dist/block.yaml dist/clean-node.yaml dist/foreign-line.yaml dist/china-direct.yaml
-            git commit -m "chore: refresh Clash rule packs"
+            build_stamp="$(TZ=Asia/Shanghai date +'%Y%m%d-%H%M')"
+            git commit -m "fix(rule): 更新规则-${build_stamp}"
             git push
           fi
