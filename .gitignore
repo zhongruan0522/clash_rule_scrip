@@ -1,0 +1,7 @@
+# Local/private source configuration stays out of the published repository.
+/1.yml
+
+# Local tooling
+/.serena/
+/__pycache__/
+/scripts/__pycache__/

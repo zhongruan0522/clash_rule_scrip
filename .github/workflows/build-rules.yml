@@ -1,0 +1,48 @@
+name: Build Clash rule packs
+
+on:
+  schedule:
+    - cron: "20 21 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "sources/upstream.yml"
+      - "scripts/build_rules.py"
+      - ".github/workflows/build-rules.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-clash-rule-packs
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install YAML library
+        run: python -m pip install PyYAML==6.0.2
+
+      - name: Aggregate upstream rules
+        run: python scripts/build_rules.py
+
+      - name: Commit refreshed packs
+        run: |
+          if [ -n "$(git status --porcelain -- dist)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add dist/block.yaml dist/clean-node.yaml dist/foreign-line.yaml dist/china-direct.yaml
+            git commit -m "chore: refresh Clash rule packs"
+            git push
+          fi
