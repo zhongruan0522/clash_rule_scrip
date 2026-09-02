@@ -1,4 +1,42 @@
 payload:
+  - DOMAIN-KEYWORD,baidu
+  - DOMAIN-KEYWORD,bilibili
+  - DOMAIN-KEYWORD,taobao
+  - DOMAIN-KEYWORD,alipay
+  - DOMAIN-KEYWORD,tencent
+  - DOMAIN-KEYWORD,qq
+  - DOMAIN-KEYWORD,netease
+  - DOMAIN-SUFFIX,minimaxi.com
+  - DOMAIN-SUFFIX,zread.ai
+  - DOMAIN-SUFFIX,rainplay.cn
+  - DOMAIN-SUFFIX,ruancang.net
+  - DOMAIN-SUFFIX,zhipuai.cn
+  - DOMAIN-SUFFIX,siliconflow.cn
+  - DOMAIN-SUFFIX,modelscope.cn
+  - DOMAIN-SUFFIX,feishu.cn
+  - DOMAIN-SUFFIX,vivo.com.cn
+  - DOMAIN-SUFFIX,bilibili.com
+  - DOMAIN-SUFFIX,jxxdjsxy.com
+  - DOMAIN-SUFFIX,daozhiyun.cn
+  - DOMAIN-SUFFIX,alipay.com
+  - DOMAIN-SUFFIX,szhdy.com
+  - DOMAIN-SUFFIX,jxeduyun.com
+  - DOMAIN-SUFFIX,neuedu.com
+  - DOMAIN-SUFFIX,apifox.com
+  - DOMAIN-SUFFIX,bibigpt.co
+  - DOMAIN-SUFFIX,muyuan.do
+  - DOMAIN-SUFFIX,sharedchat.cc
+  - DOMAIN-SUFFIX,trae.cn
+  - DOMAIN-SUFFIX,trae.com.cn
+  - DOMAIN-SUFFIX,bytedance.com
+  - DOMAIN-SUFFIX,zijieapi.com
+  - DOMAIN-SUFFIX,bytedanceapi.com
+  - DOMAIN-SUFFIX,open-vsx.org
+  - DOMAIN-SUFFIX,edu.cn
+  - IP-CIDR,127.0.0.0/8
+  - IP-CIDR,10.0.0.0/8
+  - IP-CIDR,172.16.0.0/12
+  - IP-CIDR,192.168.0.0/16
   - DOMAIN-SUFFIX,12306.cn
   - DOMAIN-SUFFIX,95306.cn
   - DOMAIN-SUFFIX,95572.com
@@ -317,44 +355,6 @@ payload:
   - DOMAIN-SUFFIX,steamcontent.com
   - DOMAIN-SUFFIX,steamserver.net
   - DOMAIN-SUFFIX,steamusercontent.com
-  - DOMAIN-KEYWORD,baidu
-  - DOMAIN-KEYWORD,bilibili
-  - DOMAIN-KEYWORD,taobao
-  - DOMAIN-KEYWORD,alipay
-  - DOMAIN-KEYWORD,tencent
-  - DOMAIN-KEYWORD,qq
-  - DOMAIN-KEYWORD,netease
-  - DOMAIN-SUFFIX,minimaxi.com
-  - DOMAIN-SUFFIX,zread.ai
-  - DOMAIN-SUFFIX,rainplay.cn
-  - DOMAIN-SUFFIX,ruancang.net
-  - DOMAIN-SUFFIX,zhipuai.cn
-  - DOMAIN-SUFFIX,siliconflow.cn
-  - DOMAIN-SUFFIX,modelscope.cn
-  - DOMAIN-SUFFIX,feishu.cn
-  - DOMAIN-SUFFIX,vivo.com.cn
-  - DOMAIN-SUFFIX,bilibili.com
-  - DOMAIN-SUFFIX,jxxdjsxy.com
-  - DOMAIN-SUFFIX,daozhiyun.cn
-  - DOMAIN-SUFFIX,alipay.com
-  - DOMAIN-SUFFIX,szhdy.com
-  - DOMAIN-SUFFIX,jxeduyun.com
-  - DOMAIN-SUFFIX,neuedu.com
-  - DOMAIN-SUFFIX,apifox.com
-  - DOMAIN-SUFFIX,bibigpt.co
-  - DOMAIN-SUFFIX,muyuan.do
-  - DOMAIN-SUFFIX,sharedchat.cc
-  - DOMAIN-SUFFIX,trae.cn
-  - DOMAIN-SUFFIX,trae.com.cn
-  - DOMAIN-SUFFIX,bytedance.com
-  - DOMAIN-SUFFIX,zijieapi.com
-  - DOMAIN-SUFFIX,bytedanceapi.com
-  - DOMAIN-SUFFIX,open-vsx.org
-  - DOMAIN-SUFFIX,edu.cn
-  - IP-CIDR,127.0.0.0/8
-  - IP-CIDR,10.0.0.0/8
-  - IP-CIDR,172.16.0.0/12
-  - IP-CIDR,192.168.0.0/16
   - DOMAIN,api.blipsandchitz.me
   - DOMAIN,p1-juejin.byteimg.com
   - DOMAIN,p2-juejin.byteimg.com

@@ -1,6 +1,30 @@
 payload:
   - DOMAIN-KEYWORD,antigravity
   - DOMAIN-KEYWORD,google
+  - DOMAIN-SUFFIX,z.ai
+  - DOMAIN-SUFFIX,bigmodel.cn
+  - DOMAIN-SUFFIX,deepseek.com
+  - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,claude.ai
+  - DOMAIN-SUFFIX,claude.com
+  - DOMAIN-SUFFIX,clau.de
+  - DOMAIN-SUFFIX,claudemcpclient.com
+  - DOMAIN-SUFFIX,claudeusercontent.com
+  - DOMAIN,servd-anthropic-website.b-cdn.net
+  - DOMAIN,anthropic.com.cdn.cloudflare.net
+  - DOMAIN,anthropic.auth0.com
+  - DOMAIN,anthropic-com.ghost.io
+  - DOMAIN-SUFFIX,statsigapi.net
+  - DOMAIN,browser-intake-us5-datadoghq.com
+  - DOMAIN-KEYWORD,datadog
+  - DOMAIN-KEYWORD,sift
+  - DOMAIN-SUFFIX,intercom.io
+  - DOMAIN-SUFFIX,intercomcdn.com
+  - DOMAIN,cdn.usefathom.com
+  - IP-CIDR,160.79.104.0/21,no-resolve
+  - IP-CIDR6,2607:6bc0::/32,no-resolve
+  - IP-ASN,399358,no-resolve
+  - DOMAIN-SUFFIX,antigravity-unleash.goog
   - DOMAIN-SUFFIX,firefly.adobe.com
   - DOMAIN-SUFFIX,firefly.adobe.io
   - DOMAIN,aws-language-servers.us-east-1.amazonaws.com
@@ -18,20 +42,14 @@ payload:
   - DOMAIN-SUFFIX,q.eu-central-1.amazonaws.com
   - DOMAIN-SUFFIX,q.us-east-1.amazonaws.com
   - DOMAIN-SUFFIX,sso.amazonaws.com
-  - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,anthropic.com.cn
   - DOMAIN-SUFFIX,antspace.dev
-  - DOMAIN-SUFFIX,clau.de
-  - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,claude.app
-  - DOMAIN-SUFFIX,claude.com
   - DOMAIN-SUFFIX,claude.new
   - DOMAIN-SUFFIX,claude.site
-  - DOMAIN-SUFFIX,claudemcpclient.com
   - DOMAIN-SUFFIX,claudemcpcontent.com
   - DOMAIN-SUFFIX,claudepages.dev
   - DOMAIN-SUFFIX,claudestudio.com
-  - DOMAIN-SUFFIX,claudeusercontent.com
   - DOMAIN-SUFFIX,modelcontextprotocol.com
   - DOMAIN-SUFFIX,modelcontextprotocol.io
   - DOMAIN-SUFFIX,modelcontextprotocol.net
@@ -41,31 +59,17 @@ payload:
   - PROCESS-NAME,claude
   - PROCESS-NAME,claude.exe
   - PROCESS-NAME,cowork-svc.exe
-  - IP-CIDR,160.79.104.0/21,no-resolve
-  - IP-CIDR6,2607:6bc0::/32,no-resolve
-  - IP-ASN,399358,no-resolve
-  - DOMAIN,anthropic-com.ghost.io
-  - DOMAIN,anthropic.auth0.com
-  - DOMAIN,anthropic.com.cdn.cloudflare.net
-  - DOMAIN,browser-intake-us5-datadoghq.com
   - DOMAIN,cdn.growthbook.io
-  - DOMAIN,cdn.usefathom.com
-  - DOMAIN,servd-anthropic-website.b-cdn.net
   - DOMAIN,storage.googleapis.com
   - DOMAIN-SUFFIX,anthropic.team
   - DOMAIN-SUFFIX,chatbotclaude.com
-  - DOMAIN-SUFFIX,intercom.io
-  - DOMAIN-SUFFIX,intercomcdn.com
   - DOMAIN-SUFFIX,interface.feedback
   - DOMAIN-SUFFIX,lcicat.org
   - DOMAIN-SUFFIX,lcicollections.org
   - DOMAIN-SUFFIX,mcpservertest.online
   - DOMAIN-SUFFIX,muthos.com
   - DOMAIN-SUFFIX,sillylittleguy.org
-  - DOMAIN-SUFFIX,statsigapi.net
-  - DOMAIN-KEYWORD,datadog
   - DOMAIN-KEYWORD,sentry
-  - DOMAIN-KEYWORD,sift
   - DOMAIN-SUFFIX,augmentcode.com
   - PROCESS-NAME,Augment
   - PROCESS-NAME,Augment.exe
@@ -183,7 +187,6 @@ payload:
   - DOMAIN-SUFFIX,aicode.googleapis.com
   - DOMAIN-SUFFIX,aida.googleapis.com
   - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
-  - DOMAIN-SUFFIX,antigravity-unleash.goog
   - DOMAIN-SUFFIX,flow.google
   - DOMAIN-SUFFIX,geller-pa.googleapis.com
   - DOMAIN-SUFFIX,gemini.gstatic.com
@@ -324,12 +327,6 @@ payload:
   - DOMAIN-SUFFIX,youmind.com
   - DOMAIN-SUFFIX,youmind.site
   - DOMAIN-SUFFIX,zed.dev
-  - DOMAIN-SUFFIX,z.ai
-  - DOMAIN-SUFFIX,bigmodel.cn
-  - DOMAIN-SUFFIX,deepseek.com
-  - IP-CIDR,160.79.104.0/21,US-ZJ
-  - IP-CIDR6,2607:6bc0::/32,US-ZJ
-  - IP-ASN,399358,US-ZJ
   - DOMAIN,chat.openai.com.cdn.cloudflare.net
   - IP-CIDR,24.199.123.28/32
   - IP-CIDR,64.23.132.171/32

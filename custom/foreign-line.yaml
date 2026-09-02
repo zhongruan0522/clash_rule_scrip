@@ -1,0 +1,10 @@
+payload:
+- DOMAIN-SUFFIX,linux.do
+- DOMAIN-SUFFIX,cloudflare.com
+- DOMAIN-SUFFIX,yunwu.ai
+- DOMAIN-SUFFIX,aitodo.co
+- DOMAIN-SUFFIX,zxiaoruan.cn
+- DOMAIN-SUFFIX,sylus-evolx.cn
+- DOMAIN-SUFFIX,qwen.ai
+- IP-CIDR,85.235.67.147/32,no-resolve
+- IP-CIDR,150.241.206.51/32,no-resolve

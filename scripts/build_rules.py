@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Aggregate auditable upstream sources into four standalone rule providers."""
+"""Aggregate custom and upstream rules into four standalone rule providers."""
 
 from __future__ import annotations
 
@@ -12,10 +12,18 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-UPSTREAM = ROOT / "sources" / "upstream.yml"
+CUSTOM = ROOT / "custom"
+UPSTREAM = CUSTOM / "upstream.yml"
 DIST = ROOT / "dist"
 
 CATEGORIES = {
+    "REJECT": "block.yaml",
+    "US-ZJ": "clean-node.yaml",
+    "LSDL": "foreign-line.yaml",
+    "DIRECT": "china-direct.yaml",
+}
+
+CUSTOM_FILES = {
     "REJECT": "block.yaml",
     "US-ZJ": "clean-node.yaml",
     "LSDL": "foreign-line.yaml",
@@ -103,6 +111,19 @@ def normalize_payload(payload: list[str], behavior: str, provider_name: str) -> 
     return normalized
 
 
+def validate_custom(payload: list[str], filename: str) -> list[str]:
+    normalized: list[str] = []
+    for raw in payload:
+        rule = str(raw).strip()
+        if not rule:
+            continue
+        rule_type = rule.split(",", 1)[0].upper()
+        if rule_type not in SUPPORTED_CLASSICAL_TYPES:
+            raise ValueError(f"custom/{filename}: unsupported rule type {rule_type!r}: {rule!r}")
+        normalized.append(rule)
+    return normalized
+
+
 def write_category(path: Path, rules: list[str]) -> None:
     body = "payload:\n"
     body += "".join(f"  - {rule}\n" for rule in rules)
@@ -113,50 +134,64 @@ def main() -> None:
     config = yaml.safe_load(UPSTREAM.read_text(encoding="utf-8"))
     providers = config.get("providers", [])
     if not providers:
-        raise ValueError("sources/upstream.yml contains no upstream providers")
+        raise ValueError("custom/upstream.yml contains no upstream providers")
 
     selected: dict[str, list[str]] = {path: [] for path in CATEGORIES.values()}
     seen: dict[str, str] = {}
     sources_used: set[str] = set()
 
-    # Existing packs carry the private inline rules. Keeping them as a baseline
-    # lets cloud workflows refresh upstream sources without publishing 1.yml.
-    baseline_counts: dict[str, int] = {}
-    for filename, rules in selected.items():
-        path = DIST / filename
+    custom_rules: dict[str, list[str]] = {}
+    custom_counts: dict[str, int] = {}
+    for target, filename in CATEGORIES.items():
+        custom_filename = CUSTOM_FILES[target]
+        path = CUSTOM / custom_filename
         if not path.exists():
+            custom_counts[filename] = 0
             continue
         parsed = yaml.safe_load(path.read_text(encoding="utf-8"))
         payload = parsed.get("payload") if isinstance(parsed, dict) else None
         if not isinstance(payload, list):
-            raise ValueError(f"Existing rule pack has no payload list: {path}")
-        for rule in payload:
-            if rule in seen:
-                continue
-            seen[rule] = filename
-            rules.append(rule)
-        baseline_counts[filename] = len(rules)
+            raise ValueError(f"Custom rule pack has no payload list: {path}")
+        converted = validate_custom(payload, custom_filename)
+        custom_rules[target] = converted
+        custom_counts[filename] = len(converted)
 
-    for provider in providers:
-        provider_name = provider["name"]
-        target = provider["target"]
-        if target not in CATEGORIES:
-            raise ValueError(f"Unknown output target {target!r} for {provider_name!r}")
-        output = CATEGORIES[target]
-        url = source_location(provider)
-        data = fetch(url)
-        parsed = yaml.safe_load(data)
-        payload = parsed.get("payload") if isinstance(parsed, dict) else None
-        if not isinstance(payload, list):
-            raise ValueError(f"{provider_name}: no payload list at {url}")
-        converted = normalize_payload(payload, provider["behavior"], provider_name)
-        sources_used.add(url)
+    # Preserve the original priority: broad ad upstream precedes custom clean
+    # telemetry rules; within each other category, custom rules take priority.
+    for target, filename in CATEGORIES.items():
+        target_providers = [
+            provider for provider in providers if provider["target"] == target
+        ]
 
-        for rule in converted:
-            if rule in seen:
-                continue
-            seen[rule] = output
-            selected[output].append(rule)
+        def add_rules(rules: list[str]) -> None:
+            for rule in rules:
+                if rule in seen:
+                    continue
+                seen[rule] = filename
+                selected[filename].append(rule)
+
+        if target == "REJECT":
+            for provider in target_providers:
+                provider_name = provider["name"]
+                url = source_location(provider)
+                parsed = yaml.safe_load(fetch(url))
+                payload = parsed.get("payload") if isinstance(parsed, dict) else None
+                if not isinstance(payload, list):
+                    raise ValueError(f"{provider_name}: no payload list at {url}")
+                sources_used.add(url)
+                add_rules(normalize_payload(payload, provider["behavior"], provider_name))
+            add_rules(custom_rules.get(target, []))
+        else:
+            add_rules(custom_rules.get(target, []))
+            for provider in target_providers:
+                provider_name = provider["name"]
+                url = source_location(provider)
+                parsed = yaml.safe_load(fetch(url))
+                payload = parsed.get("payload") if isinstance(parsed, dict) else None
+                if not isinstance(payload, list):
+                    raise ValueError(f"{provider_name}: no payload list at {url}")
+                sources_used.add(url)
+                add_rules(normalize_payload(payload, provider["behavior"], provider_name))
 
     DIST.mkdir(exist_ok=True)
     for filename in CATEGORIES.values():
@@ -168,7 +203,7 @@ def main() -> None:
 
     for filename, output_rules in selected.items():
         print(f"{filename}: {len(output_rules)} rules")
-    print(f"baseline rules loaded: {sum(baseline_counts.values())}")
+    print(f"custom rules loaded: {sum(custom_counts.values())} ({custom_counts})")
     print(f"upstream providers merged: {len(sources_used)}")
 
 
