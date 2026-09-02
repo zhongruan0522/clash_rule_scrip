@@ -32,15 +32,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.0.0
         with:
-          python-version: "3.12"
+          python-version: "3.14"
 
       - name: Install YAML library
-        run: python -m pip install PyYAML==6.0.2
+        run: python -m pip install PyYAML==6.0.3
 
       - name: Aggregate upstream rules
         run: python scripts/build_rules.py
