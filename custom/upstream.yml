@@ -8,6 +8,54 @@ providers:
   target: US-ZJ
   behavior: classical
   url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/global.yaml
+- name: Anthropic
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/anthropic.yaml
+- name: Gemini
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/google-ai.yaml
+- name: Grok
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/x-ai.yaml
+- name: Perplexity
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/perplexity.yaml
+- name: Groq
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/groq.yaml
+- name: MistralAI
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/mistral-ai.yaml
+- name: Cohere
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/cohere.yaml
+- name: MetaAI
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/meta-ai.yaml
+- name: HuggingFace
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/huggingface.yaml
+- name: Midjourney
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/midjourney.yaml
+- name: StabilityAI
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/stability-ai.yaml
+- name: Poe
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/poe.yaml
 - name: OpenAI
   target: US-ZJ
   behavior: classical

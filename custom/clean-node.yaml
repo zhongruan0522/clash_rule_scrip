@@ -1,4 +1,16 @@
 payload:
+- PROCESS-NAME,Antigravity
+- PROCESS-NAME,Antigravity.exe
+- PROCESS-NAME,Gemini
+- PROCESS-NAME,Gemini.exe
+- PROCESS-NAME,Antigravity IDE
+- PROCESS-NAME,Antigravity IDE.exe
+- PROCESS-NAME,agentapi
+- PROCESS-NAME,agentapi.exe
+- PROCESS-NAME-WILDCARD,Antigravity Helper*
+- PROCESS-NAME-WILDCARD,Antigravity IDE Helper*
+- PROCESS-NAME-WILDCARD,language_server*
+- PROCESS-NAME-WILDCARD,agy*
 - DOMAIN-KEYWORD,antigravity
 - DOMAIN-KEYWORD,google
 - DOMAIN-SUFFIX,z.ai

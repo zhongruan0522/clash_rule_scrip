@@ -39,6 +39,7 @@ SUPPORTED_CLASSICAL_TYPES = {
     "IP-CIDR6",
     "IP-ASN",
     "PROCESS-NAME",
+    "PROCESS-NAME-WILDCARD",
 }
 
 def fetch(url: str) -> bytes:
