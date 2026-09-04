@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+import sys
+import time
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -23,6 +25,11 @@ CATEGORIES = {
     "DIRECT": "china-direct.yaml",
 }
 
+# Client matching order: block first, then clean node, foreign line, and
+# China direct. Cross-category duplicates are kept by the earliest category;
+# later duplicates could never match in a properly ordered client.
+PRIORITY = ("REJECT", "US-ZJ", "LSDL", "DIRECT")
+
 CUSTOM_FILES = {
     "REJECT": "block.yaml",
     "US-ZJ": "clean-node.yaml",
@@ -42,13 +49,18 @@ SUPPORTED_CLASSICAL_TYPES = {
     "PROCESS-NAME-WILDCARD",
 }
 
-def fetch(url: str) -> bytes:
-    request = Request(url, headers={"User-Agent": "clash-rule-aggregator"})
-    try:
-        with urlopen(request, timeout=30) as response:
-            return response.read()
-    except Exception as error:
-        raise RuntimeError(f"failed to download {url}: {error}") from error
+def fetch(url: str, retries: int = 3) -> bytes:
+    last_error: Exception | None = None
+    for attempt in range(1, retries + 1):
+        request = Request(url, headers={"User-Agent": "clash-rule-aggregator"})
+        try:
+            with urlopen(request, timeout=30) as response:
+                return response.read()
+        except Exception as error:
+            last_error = error
+            if attempt < retries:
+                time.sleep(2 * attempt)
+    raise RuntimeError(f"failed to download {url} after {retries} attempts: {last_error}")
 
 
 def canonical_source_url(provider: dict[str, Any]) -> str:
@@ -70,12 +82,16 @@ def source_location(provider: dict[str, Any]) -> str:
     return url
 
 
-def normalize_domain(item: str) -> str:
+def normalize_domain(item: str, provider_name: str) -> str:
     if item.startswith("+."):
         return f"DOMAIN-SUFFIX,{item[2:]}"
     if item.startswith("."):
-        # Classical rules cannot express "subdomains only". The closest stable
-        # match is DOMAIN-SUFFIX; flag it through the stderr report if it appears.
+        # Classical rules cannot express "subdomains only". DOMAIN-SUFFIX also
+        # matches the apex domain, so flag the widened scope for review.
+        print(
+            f"warning: {provider_name}: widened subdomain-only entry {item!r} to DOMAIN-SUFFIX",
+            file=sys.stderr,
+        )
         return f"DOMAIN-SUFFIX,{item[1:]}"
     return f"DOMAIN,{item}"
 
@@ -90,7 +106,7 @@ def normalize_payload(payload: list[str], behavior: str, provider_name: str) -> 
         if behavior == "domain":
             if "://" in item or "/" in item:
                 raise ValueError(f"{provider_name}: unsupported domain item {item!r}")
-            normalized.append(normalize_domain(item))
+            normalized.append(normalize_domain(item, provider_name))
             continue
 
         if behavior == "ipcidr":
@@ -98,17 +114,22 @@ def normalize_payload(payload: list[str], behavior: str, provider_name: str) -> 
             normalized.append(f"{rule_type},{item}")
             continue
 
-        rule_type = item.split(",", 1)[0].upper()
+        rule_type, _, rest = item.partition(",")
+        rule_type = rule_type.upper()
         if rule_type not in SUPPORTED_CLASSICAL_TYPES:
             # Some upstream classical files mix in plain domain-provider entries.
             # Detecting bare domains preserves the source rules safely.
             if "," not in item:
-                normalized.append(normalize_domain(item))
+                normalized.append(normalize_domain(item, provider_name))
                 continue
             raise ValueError(
                 f"{provider_name}: unsupported classical rule type {rule_type!r}: {item!r}"
             )
-        normalized.append(item)
+        if not rest:
+            continue
+        # Rebuild with a canonical upper-case type so equivalent rules dedupe
+        # regardless of the casing used by the upstream file.
+        normalized.append(f"{rule_type},{rest}")
     return normalized
 
 
@@ -118,10 +139,11 @@ def validate_custom(payload: list[str], filename: str) -> list[str]:
         rule = str(raw).strip()
         if not rule:
             continue
-        rule_type = rule.split(",", 1)[0].upper()
-        if rule_type not in SUPPORTED_CLASSICAL_TYPES:
+        rule_type, _, rest = rule.partition(",")
+        rule_type = rule_type.upper()
+        if rule_type not in SUPPORTED_CLASSICAL_TYPES or not rest:
             raise ValueError(f"custom/{filename}: unsupported rule type {rule_type!r}: {rule!r}")
-        normalized.append(rule)
+        normalized.append(f"{rule_type},{rest}")
     return normalized
 
 
@@ -140,6 +162,7 @@ def main() -> None:
     selected: dict[str, list[str]] = {path: [] for path in CATEGORIES.values()}
     seen: dict[str, str] = {}
     sources_used: set[str] = set()
+    cross_dedupe: dict[tuple[str, str], int] = {}
 
     custom_rules: dict[str, list[str]] = {}
     custom_counts: dict[str, int] = {}
@@ -159,14 +182,21 @@ def main() -> None:
 
     # Preserve the original priority: broad ad upstream precedes custom clean
     # telemetry rules; within each other category, custom rules take priority.
-    for target, filename in CATEGORIES.items():
+    # Iteration follows PRIORITY so cross-category dedupe always keeps the
+    # earliest matching channel, independent of dict definition order.
+    for target in PRIORITY:
+        filename = CATEGORIES[target]
         target_providers = [
             provider for provider in providers if provider["target"] == target
         ]
 
         def add_rules(rules: list[str]) -> None:
             for rule in rules:
-                if rule in seen:
+                owner = seen.get(rule)
+                if owner is not None:
+                    if owner != filename:
+                        key = (owner, filename)
+                        cross_dedupe[key] = cross_dedupe.get(key, 0) + 1
                     continue
                 seen[rule] = filename
                 selected[filename].append(rule)
@@ -194,16 +224,27 @@ def main() -> None:
                 sources_used.add(url)
                 add_rules(normalize_payload(payload, provider["behavior"], provider_name))
 
+    # Fail loudly instead of silently shipping overlaps or duplicates.
+    for filename, rules in selected.items():
+        if len(rules) != len(set(rules)):
+            raise RuntimeError(f"{filename}: duplicate rules survived the merge")
+    merged = [rule for rules in selected.values() for rule in rules]
+    if len(merged) != len(set(merged)):
+        raise RuntimeError("duplicate rules across categories")
+
     DIST.mkdir(exist_ok=True)
-    for filename in CATEGORIES.values():
+    for target in PRIORITY:
+        filename = CATEGORIES[target]
         output_path = DIST / filename
-        if output_path.exists() and not selected[filename]:
-            output_path.unlink()
+        if not selected[filename]:
+            output_path.unlink(missing_ok=True)
             continue
         write_category(output_path, selected[filename])
 
     for filename, output_rules in selected.items():
         print(f"{filename}: {len(output_rules)} rules")
+    for (kept, skipped), count in sorted(cross_dedupe.items()):
+        print(f"cross-category dedupe: {count} rule(s) kept in {kept}, skipped from {skipped}")
     print(f"custom rules loaded: {sum(custom_counts.values())} ({custom_counts})")
     print(f"upstream providers merged: {len(sources_used)}")
 
