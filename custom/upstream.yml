@@ -4,6 +4,10 @@ providers:
   target: REJECT
   behavior: domain
   url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ads-all.mrs
+- name: globalai
+  target: US-ZJ
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/global.yaml
 - name: Anthropic
   target: US-ZJ
   behavior: classical

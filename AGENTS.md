@@ -5,7 +5,6 @@
 - This repository publishes four stable Clash rule-provider links.
 - `custom/` contains maintainable input: local overrides and upstream source declarations.
 - `dist/` contains generated output for Clash clients. Do not hand-edit it; GitHub Actions refreshes it.
-- `1.yml` is a local-only source and is ignored. Never commit or publish it.
 
 ## Layout
 
