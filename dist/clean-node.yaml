@@ -238,9 +238,14 @@ payload:
   - DOMAIN-SUFFIX,lumalabs.ai
   - DOMAIN-SUFFIX,manus.im
   - DOMAIN-SUFFIX,manuscdn.com
+  - DOMAIN,ai.developer.meta.com
   - DOMAIN,ai.meta.com
+  - DOMAIN,aidemos.meta.com
+  - DOMAIN,developer.meta.com
+  - DOMAIN,llama.developer.meta.com
   - DOMAIN-SUFFIX,atmeta.com
   - DOMAIN-SUFFIX,llama.com
+  - DOMAIN-SUFFIX,llamameta.net
   - DOMAIN-SUFFIX,meta.ai
   - DOMAIN-SUFFIX,midjourney.com
   - DOMAIN-SUFFIX,mistral.ai
