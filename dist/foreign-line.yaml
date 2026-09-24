@@ -3,7 +3,7 @@ payload:
   - DOMAIN-SUFFIX,cloudflare.com
   - DOMAIN-SUFFIX,yunwu.ai
   - DOMAIN-SUFFIX,aitodo.co
-  - DOMAIN-SUFFIX,zxiaoruan.cn
+  - DOMAIN-SUFFIX,nookmux.com
   - DOMAIN-SUFFIX,sylus-evolx.cn
   - DOMAIN-SUFFIX,qwen.ai
   - IP-CIDR,85.235.67.147/32,no-resolve
