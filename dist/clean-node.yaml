@@ -26,6 +26,7 @@ payload:
   - DOMAIN,anthropic.com.cdn.cloudflare.net
   - DOMAIN,anthropic.auth0.com
   - DOMAIN,anthropic-com.ghost.io
+  - DOMAIN-SUFFIX,sentry.io
   - DOMAIN-SUFFIX,statsigapi.net
   - DOMAIN,browser-intake-us5-datadoghq.com
   - DOMAIN-KEYWORD,datadog

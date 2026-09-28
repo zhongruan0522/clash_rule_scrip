@@ -33,6 +33,25 @@ payload:
   - DOMAIN-SUFFIX,bytedanceapi.com
   - DOMAIN-SUFFIX,open-vsx.org
   - DOMAIN-SUFFIX,edu.cn
+  - DOMAIN-SUFFIX,kurobbs.com
+  - DOMAIN-SUFFIX,kurogame.com
+  - DOMAIN-SUFFIX,kurogame.net
+  - DOMAIN-SUFFIX,kurogame.xyz
+  - DOMAIN-SUFFIX,kurogame-service.com
+  - DOMAIN-SUFFIX,kurogame-service.xyz
+  - DOMAIN-SUFFIX,kurogames.com
+  - DOMAIN-SUFFIX,kurogames.net
+  - DOMAIN-SUFFIX,kurogames-ads.com
+  - DOMAIN-SUFFIX,kurogames-global.com
+  - DOMAIN-SUFFIX,kurokingdom.com
+  - DOMAIN-SUFFIX,aki-game.com
+  - DOMAIN-SUFFIX,aki-game.net
+  - DOMAIN-SUFFIX,aki-game2.com
+  - DOMAIN-SUFFIX,aki-game2.net
+  - DOMAIN-SUFFIX,wutheringwaves.cn
+  - DOMAIN-SUFFIX,mingchao.com
+  - DOMAIN-SUFFIX,mingchaoonline.com
+  - DOMAIN-SUFFIX,mingchaoyouxi.com
   - IP-CIDR,127.0.0.0/8
   - IP-CIDR,10.0.0.0/8
   - IP-CIDR,172.16.0.0/12
@@ -16002,10 +16021,6 @@ payload:
   - DOMAIN-SUFFIX,akgjgs.com
   - DOMAIN-SUFFIX,akhlwyy.com
   - DOMAIN-SUFFIX,akhy.com
-  - DOMAIN-SUFFIX,aki-game.com
-  - DOMAIN-SUFFIX,aki-game.net
-  - DOMAIN-SUFFIX,aki-game2.com
-  - DOMAIN-SUFFIX,aki-game2.net
   - DOMAIN-SUFFIX,akile.net
   - DOMAIN-SUFFIX,akkogear.com
   - DOMAIN-SUFFIX,akng.net
@@ -62267,16 +62282,6 @@ payload:
   - DOMAIN-SUFFIX,kupao.com
   - DOMAIN-SUFFIX,kuraboshanghai.com
   - DOMAIN-SUFFIX,kureader.com
-  - DOMAIN-SUFFIX,kurobbs.com
-  - DOMAIN-SUFFIX,kurogame-service.com
-  - DOMAIN-SUFFIX,kurogame-service.xyz
-  - DOMAIN-SUFFIX,kurogame.com
-  - DOMAIN-SUFFIX,kurogame.net
-  - DOMAIN-SUFFIX,kurogame.xyz
-  - DOMAIN-SUFFIX,kurogames-global.com
-  - DOMAIN-SUFFIX,kurogames.com
-  - DOMAIN-SUFFIX,kurogames.net
-  - DOMAIN-SUFFIX,kurokingdom.com
   - DOMAIN-SUFFIX,kuroko.info
   - DOMAIN-SUFFIX,kurz-sh.com
   - DOMAIN-SUFFIX,kusdk.com
@@ -68482,9 +68487,6 @@ payload:
   - DOMAIN-SUFFIX,mingbiao001.com
   - DOMAIN-SUFFIX,mingbiaohao.com
   - DOMAIN-SUFFIX,mingcalc.com
-  - DOMAIN-SUFFIX,mingchao.com
-  - DOMAIN-SUFFIX,mingchaoonline.com
-  - DOMAIN-SUFFIX,mingchaoyouxi.com
   - DOMAIN-SUFFIX,mingchu.co
   - DOMAIN-SUFFIX,mingci.org
   - DOMAIN-SUFFIX,mingcihospital.com
