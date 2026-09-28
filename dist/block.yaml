@@ -485,7 +485,6 @@ payload:
   - DOMAIN,sentry.mindbox.ru
   - DOMAIN,sentry.popmechanic.ru
   - DOMAIN-SUFFIX,ad.api.moji.com
-  - DOMAIN,browser-intake-datadoghq.com
   - DOMAIN,openai.qualtrics.com
   - DOMAIN,sentry.iptv.rt.ru
   - DOMAIN,adeventtracker.spotify.com

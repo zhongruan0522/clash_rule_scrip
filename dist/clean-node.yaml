@@ -21,6 +21,7 @@ payload:
   - DOMAIN-SUFFIX,claude.com
   - DOMAIN-SUFFIX,clau.de
   - DOMAIN-SUFFIX,claudemcpclient.com
+  - DOMAIN-SUFFIX,claudemcpcontent.com
   - DOMAIN-SUFFIX,claudeusercontent.com
   - DOMAIN,servd-anthropic-website.b-cdn.net
   - DOMAIN,anthropic.com.cdn.cloudflare.net
@@ -30,6 +31,7 @@ payload:
   - DOMAIN-SUFFIX,statsigapi.net
   - DOMAIN,browser-intake-us5-datadoghq.com
   - DOMAIN-KEYWORD,datadog
+  - DOMAIN-KEYWORD,sentry
   - DOMAIN-KEYWORD,sift
   - DOMAIN-SUFFIX,intercom.io
   - DOMAIN-SUFFIX,intercomcdn.com
@@ -37,7 +39,29 @@ payload:
   - IP-CIDR,160.79.104.0/21,no-resolve
   - IP-CIDR6,2607:6bc0::/32,no-resolve
   - IP-ASN,399358,no-resolve
+  - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,chatgpt.com
+  - DOMAIN-SUFFIX,chat.com
+  - DOMAIN-SUFFIX,sora.com
+  - DOMAIN-SUFFIX,oaistatic.com
+  - DOMAIN-SUFFIX,oaiusercontent.com
+  - DOMAIN-SUFFIX,crixet.com
+  - DOMAIN,openai.com.cdn.cloudflare.net
+  - DOMAIN,openaicom.imgix.net
+  - DOMAIN,openaiapi-site.azureedge.net
+  - DOMAIN,production-openaicom-storage.azureedge.net
+  - DOMAIN,openaicomproductionae4b.blob.core.windows.net
+  - DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+  - DOMAIN-SUFFIX,webpubsub.azure.com
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com
+  - DOMAIN,openai-api.arkoselabs.com
+  - DOMAIN-SUFFIX,chatgpt.livekit.cloud
+  - DOMAIN-SUFFIX,host.livekit.cloud
+  - DOMAIN-SUFFIX,turn.livekit.cloud
+  - DOMAIN,o33249.ingest.sentry.io
+  - DOMAIN,browser-intake-datadoghq.com
   - DOMAIN-SUFFIX,antigravity-unleash.goog
+  - DOMAIN-SUFFIX,net.coffee
   - DOMAIN-SUFFIX,firefly.adobe.com
   - DOMAIN-SUFFIX,firefly.adobe.io
   - DOMAIN,aws-language-servers.us-east-1.amazonaws.com
@@ -60,7 +84,6 @@ payload:
   - DOMAIN-SUFFIX,claude.app
   - DOMAIN-SUFFIX,claude.new
   - DOMAIN-SUFFIX,claude.site
-  - DOMAIN-SUFFIX,claudemcpcontent.com
   - DOMAIN-SUFFIX,claudepages.dev
   - DOMAIN-SUFFIX,claudestudio.com
   - DOMAIN-SUFFIX,modelcontextprotocol.com
@@ -82,7 +105,6 @@ payload:
   - DOMAIN-SUFFIX,mcpservertest.online
   - DOMAIN-SUFFIX,muthos.com
   - DOMAIN-SUFFIX,sillylittleguy.org
-  - DOMAIN-KEYWORD,sentry
   - DOMAIN-SUFFIX,augmentcode.com
   - PROCESS-NAME,Augment
   - PROCESS-NAME,Augment.exe
@@ -139,7 +161,6 @@ payload:
   - DOMAIN-SUFFIX,auth0.com
   - DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
   - DOMAIN-SUFFIX,challenges.cloudflare.com
-  - DOMAIN-SUFFIX,client-api.arkoselabs.com
   - DOMAIN-SUFFIX,edgeservices.bing.com
   - DOMAIN-SUFFIX,events.statsigapi.net
   - DOMAIN-SUFFIX,featuregates.org
@@ -255,16 +276,8 @@ payload:
   - DOMAIN-SUFFIX,novita.ai
   - DOMAIN-SUFFIX,ollama.com
   - DOMAIN-SUFFIX,ai.com
-  - DOMAIN-SUFFIX,chat.com
-  - DOMAIN-SUFFIX,chatgpt.com
-  - DOMAIN-SUFFIX,chatgpt.livekit.cloud
-  - DOMAIN-SUFFIX,crixet.com
-  - DOMAIN-SUFFIX,oaistatic.com
-  - DOMAIN-SUFFIX,oaiusercontent.com
-  - DOMAIN-SUFFIX,openai.com
   - DOMAIN-SUFFIX,openaiapi-site.azureedge.net
   - DOMAIN-SUFFIX,openaicom.imgix.net
-  - DOMAIN-SUFFIX,sora.com
   - DOMAIN-KEYWORD,chatgpt-async-webps-prod
   - DOMAIN-KEYWORD,openai
   - PROCESS-NAME,ChatGPT
@@ -278,17 +291,11 @@ payload:
   - IP-CIDR,64.23.132.171/32,no-resolve
   - IP-CIDR6,2604:f20::/32,no-resolve
   - IP-ASN,401518,no-resolve
-  - DOMAIN,openai-api.arkoselabs.com
   - DOMAIN,openaiassets.blob.core.windows.net
-  - DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
-  - DOMAIN,openaicomproductionae4b.blob.core.windows.net
-  - DOMAIN,production-openaicom-storage.azureedge.net
   - DOMAIN-SUFFIX,api.statsig.com
   - DOMAIN-SUFFIX,chatgpt.site
-  - DOMAIN-SUFFIX,host.livekit.cloud
   - DOMAIN-SUFFIX,oaistatsig.com
   - DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
-  - DOMAIN-SUFFIX,turn.livekit.cloud
   - DOMAIN-REGEX,^chatgpt-async-webps-prod-\S+-\d+\.webpubsub\.azure\.com$
   - DOMAIN-SUFFIX,openart.ai
   - DOMAIN-SUFFIX,openclaw.ai
