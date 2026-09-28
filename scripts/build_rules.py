@@ -133,6 +133,57 @@ def normalize_payload(payload: list[str], behavior: str, provider_name: str) -> 
     return normalized
 
 
+def build_override_index(custom_rules: dict[str, list[str]]) -> tuple[set[str], list[str]]:
+    """Index custom rules from non-REJECT categories that must win over the
+    upstream ad-block list. Only DOMAIN and DOMAIN-SUFFIX rules can express
+    coverage; DOMAIN-KEYWORD, DOMAIN-REGEX and IP rules never override."""
+    exact: set[str] = set()
+    suffix_bases: list[str] = []
+    for target, rules in custom_rules.items():
+        if target == "REJECT":
+            continue
+        for rule in rules:
+            rule_type, _, rest = rule.partition(",")
+            if rule_type not in ("DOMAIN", "DOMAIN-SUFFIX"):
+                continue
+            domain = rest.split(",", 1)[0].lower()
+            exact.add(domain)
+            if rule_type == "DOMAIN-SUFFIX":
+                suffix_bases.append(domain)
+    return exact, suffix_bases
+
+
+def drop_overridden(
+    rules: list[str], overrides: tuple[set[str], list[str]], provider_name: str
+) -> list[str]:
+    """Drop upstream ad-block rules fully covered by a custom rule, so custom
+    intent decides the policy (e.g. an ad list misfiling a first-party game
+    CDN domain). Coverage must be total: a custom exact-domain rule never
+    removes an upstream suffix rule for the same domain."""
+    exact, suffix_bases = overrides
+    if not exact:
+        return rules
+    kept: list[str] = []
+    for rule in rules:
+        rule_type, _, rest = rule.partition(",")
+        domain = rest.split(",", 1)[0].lower()
+        if rule_type == "DOMAIN":
+            covered = domain in exact or any(
+                domain == base or domain.endswith("." + base) for base in suffix_bases
+            )
+        elif rule_type == "DOMAIN-SUFFIX":
+            covered = any(
+                domain == base or domain.endswith("." + base) for base in suffix_bases
+            )
+        else:
+            covered = False
+        if covered:
+            print(f"custom override: {provider_name}: dropped {rule}", file=sys.stderr)
+            continue
+        kept.append(rule)
+    return kept
+
+
 def validate_custom(payload: list[str], filename: str) -> list[str]:
     normalized: list[str] = []
     for raw in payload:
@@ -179,6 +230,7 @@ def main() -> None:
         converted = validate_custom(payload, custom_filename)
         custom_rules[target] = converted
         custom_counts[filename] = len(converted)
+    overrides = build_override_index(custom_rules)
 
     # Preserve the original priority: broad ad upstream precedes custom clean
     # telemetry rules; within each other category, custom rules take priority.
@@ -210,7 +262,13 @@ def main() -> None:
                 if not isinstance(payload, list):
                     raise ValueError(f"{provider_name}: no payload list at {url}")
                 sources_used.add(url)
-                add_rules(normalize_payload(payload, provider["behavior"], provider_name))
+                add_rules(
+                    drop_overridden(
+                        normalize_payload(payload, provider["behavior"], provider_name),
+                        overrides,
+                        provider_name,
+                    )
+                )
             add_rules(custom_rules.get(target, []))
         else:
             add_rules(custom_rules.get(target, []))

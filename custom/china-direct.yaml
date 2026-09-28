@@ -33,6 +33,29 @@ payload:
 - DOMAIN-SUFFIX,bytedanceapi.com
 - DOMAIN-SUFFIX,open-vsx.org
 - DOMAIN-SUFFIX,edu.cn
+# 库洛游戏（鸣潮 Wuthering Waves）官方与游戏服务器域名，全部直连。
+# 域名来源：v2fly domain-list-community 的 kurogames 集合及鸣潮国服域名。
+# kurogames-ads.com 为库洛官方分发/CDN 域名，经 upstream.yml 的 exclusions
+# 从上游广告列表剔除后在此直连。
+- DOMAIN-SUFFIX,kurobbs.com
+- DOMAIN-SUFFIX,kurogame.com
+- DOMAIN-SUFFIX,kurogame.net
+- DOMAIN-SUFFIX,kurogame.xyz
+- DOMAIN-SUFFIX,kurogame-service.com
+- DOMAIN-SUFFIX,kurogame-service.xyz
+- DOMAIN-SUFFIX,kurogames.com
+- DOMAIN-SUFFIX,kurogames.net
+- DOMAIN-SUFFIX,kurogames-ads.com
+- DOMAIN-SUFFIX,kurogames-global.com
+- DOMAIN-SUFFIX,kurokingdom.com
+- DOMAIN-SUFFIX,aki-game.com
+- DOMAIN-SUFFIX,aki-game.net
+- DOMAIN-SUFFIX,aki-game2.com
+- DOMAIN-SUFFIX,aki-game2.net
+- DOMAIN-SUFFIX,wutheringwaves.cn
+- DOMAIN-SUFFIX,mingchao.com
+- DOMAIN-SUFFIX,mingchaoonline.com
+- DOMAIN-SUFFIX,mingchaoyouxi.com
 - IP-CIDR,127.0.0.0/8
 - IP-CIDR,10.0.0.0/8
 - IP-CIDR,172.16.0.0/12
