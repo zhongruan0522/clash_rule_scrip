@@ -99,6 +99,7 @@ payload:
   - DOMAIN,storage.googleapis.com
   - DOMAIN-SUFFIX,anthropic.team
   - DOMAIN-SUFFIX,chatbotclaude.com
+  - DOMAIN-SUFFIX,claude.dev
   - DOMAIN-SUFFIX,interface.feedback
   - DOMAIN-SUFFIX,lcicat.org
   - DOMAIN-SUFFIX,lcicollections.org
