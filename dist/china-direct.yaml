@@ -122837,3 +122837,30 @@ payload:
   - PROCESS-NAME,xdm.exe
   - PROCESS-NAME,xdman
   - PROCESS-NAME,xdman.exe
+  - DOMAIN-SUFFIX,10000.gd.cn
+  - DOMAIN-SUFFIX,189.cn
+  - DOMAIN-SUFFIX,189jk.cn
+  - DOMAIN-SUFFIX,360sides.cn
+  - DOMAIN-SUFFIX,bnet.cn
+  - DOMAIN-SUFFIX,chinabnet.cn
+  - DOMAIN-SUFFIX,chinatelecom.cn
+  - DOMAIN-SUFFIX,chinatelecom.com.cn
+  - DOMAIN-SUFFIX,chinatelecom.net.cn
+  - DOMAIN-SUFFIX,chinatelecom.org.cn
+  - DOMAIN-SUFFIX,ctid.com.cn
+  - DOMAIN-SUFFIX,ctrdc.com.cn
+  - DOMAIN-SUFFIX,ctyunapi.cn
+  - DOMAIN-SUFFIX,ctyunbdcsc.cn
+  - DOMAIN-SUFFIX,gd12349.com.cn
+  - DOMAIN-SUFFIX,gdbnet.cn
+  - DOMAIN-SUFFIX,gddc.com.cn
+  - DOMAIN-SUFFIX,gdtel.com.cn
+  - DOMAIN-SUFFIX,guangzhou.gd.cn
+  - DOMAIN-SUFFIX,id6.me
+  - DOMAIN-SUFFIX,iptv.gd.cn
+  - DOMAIN-SUFFIX,iwuyou189.cn
+  - DOMAIN-SUFFIX,pzclub.cn
+  - DOMAIN-SUFFIX,vnet.cn
+  - DOMAIN-SUFFIX,wuyou189.cn
+  - DOMAIN-SUFFIX,ycy100.cn
+  - DOMAIN-SUFFIX,yichuangyun.com.cn

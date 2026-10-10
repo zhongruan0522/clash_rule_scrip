@@ -212,3 +212,11 @@ providers:
   target: DIRECT
   behavior: classical
   url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
+- name: ChinaTelecom
+  target: DIRECT
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaTelecom/ChinaTelecom.yaml
+- name: CTYun
+  target: DIRECT
+  behavior: domain
+  url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ctyun.yaml
