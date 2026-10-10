@@ -133,12 +133,15 @@ def normalize_payload(payload: list[str], behavior: str, provider_name: str) -> 
     return normalized
 
 
-def build_override_index(custom_rules: dict[str, list[str]]) -> tuple[set[str], list[str]]:
+def build_override_index(custom_rules: dict[str, list[str]]) -> tuple[set[str], list[str], dict[str, str]]:
     """Index custom rules from non-REJECT categories that must win over the
     upstream ad-block list. Only DOMAIN and DOMAIN-SUFFIX rules can express
-    coverage; DOMAIN-KEYWORD, DOMAIN-REGEX and IP rules never override."""
+    coverage; DOMAIN-KEYWORD, DOMAIN-REGEX and IP rules never override.
+    Also returns exact_allows (custom DOMAIN rules as domain -> rule text) so
+    drop_overridden can warn when an upstream suffix rule shadows them."""
     exact: set[str] = set()
     suffix_bases: list[str] = []
+    exact_allows: dict[str, str] = {}
     for target, rules in custom_rules.items():
         if target == "REJECT":
             continue
@@ -148,19 +151,24 @@ def build_override_index(custom_rules: dict[str, list[str]]) -> tuple[set[str], 
                 continue
             domain = rest.split(",", 1)[0].lower()
             exact.add(domain)
-            if rule_type == "DOMAIN-SUFFIX":
+            if rule_type == "DOMAIN":
+                exact_allows.setdefault(domain, rule)
+            else:
                 suffix_bases.append(domain)
-    return exact, suffix_bases
+    return exact, suffix_bases, exact_allows
 
 
 def drop_overridden(
-    rules: list[str], overrides: tuple[set[str], list[str]], provider_name: str
+    rules: list[str],
+    overrides: tuple[set[str], list[str], dict[str, str]],
+    provider_name: str,
 ) -> list[str]:
     """Drop upstream ad-block rules fully covered by a custom rule, so custom
     intent decides the policy (e.g. an ad list misfiling a first-party game
     CDN domain). Coverage must be total: a custom exact-domain rule never
-    removes an upstream suffix rule for the same domain."""
-    exact, suffix_bases = overrides
+    removes an upstream suffix rule for the same domain — the kept upstream
+    rule shadows that custom allow, so warn instead of failing silently."""
+    exact, suffix_bases, exact_allows = overrides
     if not exact:
         return rules
     kept: list[str] = []
@@ -175,6 +183,19 @@ def drop_overridden(
             covered = any(
                 domain == base or domain.endswith("." + base) for base in suffix_bases
             )
+            if not covered:
+                shadowed = sorted(
+                    rule_text
+                    for entry, rule_text in exact_allows.items()
+                    if entry == domain or entry.endswith("." + domain)
+                )
+                if shadowed:
+                    print(
+                        f"warning: {provider_name}: kept {rule}; custom exact allow(s) "
+                        f"{', '.join(shadowed)} can never match under it — rewrite them "
+                        f"as DOMAIN-SUFFIX in custom/ to allow the whole domain family",
+                        file=sys.stderr,
+                    )
         else:
             covered = False
         if covered:
