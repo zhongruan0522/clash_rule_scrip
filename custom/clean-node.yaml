@@ -13,8 +13,6 @@ payload:
 - PROCESS-NAME-WILDCARD,agy*
 - DOMAIN-KEYWORD,antigravity
 - DOMAIN-KEYWORD,google
-- DOMAIN-SUFFIX,z.ai
-- DOMAIN-SUFFIX,bigmodel.cn
 - DOMAIN-SUFFIX,deepseek.com
 - DOMAIN-SUFFIX,anthropic.com
 - DOMAIN-SUFFIX,claude.ai
