@@ -36,6 +36,10 @@ payload:
 - DOMAIN-SUFFIX,nookmux.com
 - DOMAIN-SUFFIX,z.ai
 - DOMAIN-SUFFIX,bigmodel.cn
+- DOMAIN-SUFFIX,chatglm.cn
+- DOMAIN-SUFFIX,chatglm.com
+- DOMAIN-SUFFIX,zhipucn.com
+- DOMAIN-SUFFIX,aminer.cn
 - DOMAIN-SUFFIX,kurobbs.com
 - DOMAIN-SUFFIX,kurogame.com
 - DOMAIN-SUFFIX,kurogame.net

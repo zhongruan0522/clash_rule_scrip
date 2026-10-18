@@ -34,7 +34,7 @@ scripts/build_rules.py
 - Valid upstream targets are `REJECT`, `US-ZJ`, `LSDL`, and `DIRECT`.
 - Valid upstream behaviors are `classical`, `domain`, and `ipcidr`.
 - Preserve category priority: block first, then clean node, foreign line, and China direct.
-- Custom rules in `custom/` override the upstream ad-block list: at build time, upstream REJECT rules fully covered by a custom `DOMAIN`/`DOMAIN-SUFFIX` rule from another category are dropped (logged to stderr).
+- Custom rules in `custom/` override every upstream list: at build time, upstream rules fully covered by a custom `DOMAIN`/`DOMAIN-SUFFIX` rule from any category are dropped (logged to stderr). The upstream REJECT list additionally yields to custom rules from all non-REJECT categories.
 - Keep `README.md` at exactly five non-empty lines.
 
 ## Workflow

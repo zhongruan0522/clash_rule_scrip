@@ -133,17 +133,20 @@ def normalize_payload(payload: list[str], behavior: str, provider_name: str) -> 
     return normalized
 
 
-def build_override_index(custom_rules: dict[str, list[str]]) -> tuple[set[str], list[str], dict[str, str]]:
-    """Index custom rules from non-REJECT categories that must win over the
-    upstream ad-block list. Only DOMAIN and DOMAIN-SUFFIX rules can express
-    coverage; DOMAIN-KEYWORD, DOMAIN-REGEX and IP rules never override.
-    Also returns exact_allows (custom DOMAIN rules as domain -> rule text) so
-    drop_overridden can warn when an upstream suffix rule shadows them."""
+def build_override_index(
+    custom_rules: dict[str, list[str]], targets: tuple[str, ...]
+) -> tuple[set[str], list[str], dict[str, str]]:
+    """Index custom DOMAIN/DOMAIN-SUFFIX rules from the given categories that
+    must win over upstream rules. Only DOMAIN and DOMAIN-SUFFIX rules can
+    express coverage; DOMAIN-KEYWORD, DOMAIN-REGEX and IP rules never
+    override. Also returns exact_allows (custom DOMAIN rules as domain ->
+    rule text) so drop_overridden can warn when an upstream suffix rule
+    shadows them."""
     exact: set[str] = set()
     suffix_bases: list[str] = []
-    exact_allows: dict[str, str] = {}
+    exact_allows: dict[str, tuple[str, str]] = {}
     for target, rules in custom_rules.items():
-        if target == "REJECT":
+        if target not in targets:
             continue
         for rule in rules:
             rule_type, _, rest = rule.partition(",")
@@ -152,7 +155,7 @@ def build_override_index(custom_rules: dict[str, list[str]]) -> tuple[set[str], 
             domain = rest.split(",", 1)[0].lower()
             exact.add(domain)
             if rule_type == "DOMAIN":
-                exact_allows.setdefault(domain, rule)
+                exact_allows.setdefault(domain, (rule, target))
             else:
                 suffix_bases.append(domain)
     return exact, suffix_bases, exact_allows
@@ -160,18 +163,26 @@ def build_override_index(custom_rules: dict[str, list[str]]) -> tuple[set[str], 
 
 def drop_overridden(
     rules: list[str],
-    overrides: tuple[set[str], list[str], dict[str, str]],
+    overrides: tuple[set[str], list[str], dict[str, tuple[str, str]]],
     provider_name: str,
+    provider_target: str,
 ) -> list[str]:
-    """Drop upstream ad-block rules fully covered by a custom rule, so custom
-    intent decides the policy (e.g. an ad list misfiling a first-party game
-    CDN domain). Coverage must be total: a custom exact-domain rule never
-    removes an upstream suffix rule for the same domain — the kept upstream
-    rule shadows that custom allow, so warn instead of failing silently."""
+    """Drop upstream rules fully covered by a custom DOMAIN/DOMAIN-SUFFIX
+    rule, so custom intent decides the policy in every category (e.g. an
+    upstream proxy list filing a China-hosted AI domain for US-ZJ while the
+    custom direct pack routes it DIRECT, or an ad list misfiling a
+    first-party game CDN domain). Coverage must be total: a custom
+    exact-domain rule never removes an upstream suffix rule for the same
+    domain — the kept upstream rule shadows that custom allow, so warn
+    instead of failing silently. The shadow warning fires only when the
+    custom allow really can never match: its category matches after this
+    provider's category (within one category, custom rules are added before
+    upstream ones and win)."""
     exact, suffix_bases, exact_allows = overrides
     if not exact:
         return rules
     kept: list[str] = []
+    provider_rank = PRIORITY.index(provider_target)
     for rule in rules:
         rule_type, _, rest = rule.partition(",")
         domain = rest.split(",", 1)[0].lower()
@@ -186,8 +197,9 @@ def drop_overridden(
             if not covered:
                 shadowed = sorted(
                     rule_text
-                    for entry, rule_text in exact_allows.items()
-                    if entry == domain or entry.endswith("." + domain)
+                    for entry, (rule_text, allow_target) in exact_allows.items()
+                    if (entry == domain or entry.endswith("." + domain))
+                    and PRIORITY.index(allow_target) > provider_rank
                 )
                 if shadowed:
                     print(
@@ -251,7 +263,15 @@ def main() -> None:
         converted = validate_custom(payload, custom_filename)
         custom_rules[target] = converted
         custom_counts[filename] = len(converted)
-    overrides = build_override_index(custom_rules)
+    # Custom intent wins over every upstream list: DOMAIN/DOMAIN-SUFFIX rules
+    # from any custom category drop covered upstream rules in all categories,
+    # logged by drop_overridden. The upstream ad-block list keeps its narrower
+    # carve-out: every non-REJECT custom category overrides it, as before.
+    every_target = tuple(PRIORITY)
+    overrides_all = build_override_index(custom_rules, every_target)
+    overrides_non_reject = build_override_index(
+        custom_rules, tuple(target for target in PRIORITY if target != "REJECT")
+    )
 
     # Preserve the original priority: broad ad upstream precedes custom clean
     # telemetry rules; within each other category, custom rules take priority.
@@ -286,8 +306,9 @@ def main() -> None:
                 add_rules(
                     drop_overridden(
                         normalize_payload(payload, provider["behavior"], provider_name),
-                        overrides,
+                        overrides_non_reject,
                         provider_name,
+                        target,
                     )
                 )
             add_rules(custom_rules.get(target, []))
@@ -301,7 +322,14 @@ def main() -> None:
                 if not isinstance(payload, list):
                     raise ValueError(f"{provider_name}: no payload list at {url}")
                 sources_used.add(url)
-                add_rules(normalize_payload(payload, provider["behavior"], provider_name))
+                add_rules(
+                    drop_overridden(
+                        normalize_payload(payload, provider["behavior"], provider_name),
+                        overrides_all,
+                        provider_name,
+                        target,
+                    )
+                )
 
     # Fail loudly instead of silently shipping overlaps or duplicates.
     for filename, rules in selected.items():
