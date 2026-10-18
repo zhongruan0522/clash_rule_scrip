@@ -36,6 +36,10 @@ payload:
   - DOMAIN-SUFFIX,nookmux.com
   - DOMAIN-SUFFIX,z.ai
   - DOMAIN-SUFFIX,bigmodel.cn
+  - DOMAIN-SUFFIX,chatglm.cn
+  - DOMAIN-SUFFIX,chatglm.com
+  - DOMAIN-SUFFIX,zhipucn.com
+  - DOMAIN-SUFFIX,aminer.cn
   - DOMAIN-SUFFIX,kurobbs.com
   - DOMAIN-SUFFIX,kurogame.com
   - DOMAIN-SUFFIX,kurogame.net
@@ -378,8 +382,6 @@ payload:
   - DOMAIN-SUFFIX,steamserver.net
   - DOMAIN-SUFFIX,steamusercontent.com
   - DOMAIN,api.blipsandchitz.me
-  - DOMAIN,hospital.pku.edu.cn
-  - DOMAIN,ss.bjmu.edu.cn
   - DOMAIN,end-api.shallow.ink
   - DOMAIN,end.shallow.ink
   - DOMAIN,p3-novel.byteimg.com
@@ -395,7 +397,6 @@ payload:
   - DOMAIN,p8-juejin.byteimg.com
   - DOMAIN,p9-juejin.byteimg.com
   - DOMAIN,moocs.unipus.cn
-  - DOMAIN,opencourse.pku.edu.cn
   - DOMAIN,study.163.com
   - DOMAIN,hellofontpreview.oss-cn-beijing.aliyuncs.com
   - DOMAIN,hellowebfonts.oss-cn-beijing.aliyuncs.com
@@ -4894,8 +4895,6 @@ payload:
   - DOMAIN-SUFFIX,deepseeksvc.com
   - DOMAIN-SUFFIX,mcpworld.com
   - DOMAIN-SUFFIX,tiangong.cn
-  - DOMAIN-SUFFIX,chatglm.cn
-  - DOMAIN-SUFFIX,zhipucn.com
   - DOMAIN-SUFFIX,kimi.com
   - DOMAIN-SUFFIX,moonshot.cn
   - DOMAIN-SUFFIX,diandianlife.top
@@ -5634,7 +5633,6 @@ payload:
   - DOMAIN,ntp4.tencent.com
   - DOMAIN,ntp5.tencent.com
   - DOMAIN-SUFFIX,cn.pool.ntp.org
-  - DOMAIN-SUFFIX,ntp.neu.edu.cn
   - DOMAIN-SUFFIX,ntp.ntsc.ac.cn
   - DOMAIN-SUFFIX,ntp.org.cn
   - DOMAIN-SUFFIX,cf-china.info
@@ -121984,7 +121982,6 @@ payload:
   - DOMAIN,qianfan.baidubce.com
   - DOMAIN,yiyan.baidu.com
   - DOMAIN,api.minimax.io
-  - DOMAIN,api.minimaxi.com
   - DOMAIN-SUFFIX,modelscope.com
   - DOMAIN-SUFFIX,ppio.cn
   - DOMAIN-SUFFIX,ppio.com

@@ -110,7 +110,6 @@ payload:
   - PROCESS-NAME,augment
   - DOMAIN-SUFFIX,bfl.ai
   - DOMAIN-SUFFIX,bolt.new
-  - DOMAIN-SUFFIX,abtestvm-sg.bytedance.com
   - DOMAIN-SUFFIX,bytegate-sg.byteintlapi.com
   - DOMAIN-SUFFIX,byteoversea.com
   - DOMAIN-SUFFIX,cici.com
@@ -120,7 +119,6 @@ payload:
   - DOMAIN-SUFFIX,lf3-static.bytednsdoc.com
   - DOMAIN-SUFFIX,marscode.com
   - DOMAIN-SUFFIX,sf16-short-sg.bytedapm.com
-  - DOMAIN-SUFFIX,starling.zijieapi.com
   - DOMAIN-SUFFIX,trae-api-sg.mchost.guru
   - DOMAIN-SUFFIX,trae.ai
   - DOMAIN-SUFFIX,tron-sg.bytelemon.com
@@ -130,8 +128,6 @@ payload:
   - DOMAIN-SUFFIX,civitai.com
   - DOMAIN-SUFFIX,cline.bot
   - DOMAIN-SUFFIX,clipdrop.co
-  - DOMAIN,api.cloudflare.com
-  - DOMAIN-SUFFIX,ai.cloudflare.com
   - DOMAIN-SUFFIX,coderabbit.ai
   - DOMAIN-SUFFIX,cohere.ai
   - DOMAIN-SUFFIX,cohere.com
@@ -159,9 +155,7 @@ payload:
   - DOMAIN-SUFFIX,api.microsoftapp.net
   - DOMAIN-SUFFIX,auth0.com
   - DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
-  - DOMAIN-SUFFIX,challenges.cloudflare.com
   - DOMAIN-SUFFIX,edgeservices.bing.com
-  - DOMAIN-SUFFIX,events.statsigapi.net
   - DOMAIN-SUFFIX,featuregates.org
   - DOMAIN-SUFFIX,identrust.com
   - DOMAIN-SUFFIX,launchdarkly.com
@@ -2004,7 +1998,6 @@ payload:
   - DOMAIN-SUFFIX,disney.io
   - DOMAIN-SUFFIX,disney.it
   - DOMAIN-SUFFIX,disney.my
-  - DOMAIN-SUFFIX,disney.my.sentry.io
   - DOMAIN-SUFFIX,disney.nl
   - DOMAIN-SUFFIX,disney.no
   - DOMAIN-SUFFIX,disney.ph
