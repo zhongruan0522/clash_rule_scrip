@@ -33,6 +33,7 @@ payload:
   - DOMAIN-SUFFIX,bytedanceapi.com
   - DOMAIN-SUFFIX,open-vsx.org
   - DOMAIN-SUFFIX,edu.cn
+  - DOMAIN-SUFFIX,nookmux.com
   - DOMAIN-SUFFIX,z.ai
   - DOMAIN-SUFFIX,bigmodel.cn
   - DOMAIN-SUFFIX,kurobbs.com
