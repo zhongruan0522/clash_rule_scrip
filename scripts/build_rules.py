@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Aggregate custom and upstream rules into four standalone rule providers."""
+"""Aggregate custom and upstream rules into five standalone rule providers."""
 
 from __future__ import annotations
 
@@ -21,18 +21,23 @@ DIST = ROOT / "dist"
 CATEGORIES = {
     "REJECT": "block.yaml",
     "US-ZJ": "clean-node.yaml",
+    "DOWNLOAD": "download.yaml",
     "LSDL": "foreign-line.yaml",
     "DIRECT": "china-direct.yaml",
 }
 
-# Client matching order: block first, then clean node, foreign line, and
-# China direct. Cross-category duplicates are kept by the earliest category;
-# later duplicates could never match in a properly ordered client.
-PRIORITY = ("REJECT", "US-ZJ", "LSDL", "DIRECT")
+# Client matching order: block first, then clean node, download, foreign
+# line, and China direct. Download precedes foreign line so download CDN
+# entries (e.g. steamcontent.com, assets.xboxlive.com) are claimed before the
+# platform-wide suffixes there; platform sites still fall through to foreign
+# line. Cross-category duplicates are kept by the earliest category; later
+# duplicates could never match in a properly ordered client.
+PRIORITY = ("REJECT", "US-ZJ", "DOWNLOAD", "LSDL", "DIRECT")
 
 CUSTOM_FILES = {
     "REJECT": "block.yaml",
     "US-ZJ": "clean-node.yaml",
+    "DOWNLOAD": "download.yaml",
     "LSDL": "foreign-line.yaml",
     "DIRECT": "china-direct.yaml",
 }
@@ -61,6 +66,30 @@ def fetch(url: str, retries: int = 3) -> bytes:
             if attempt < retries:
                 time.sleep(2 * attempt)
     raise RuntimeError(f"failed to download {url} after {retries} attempts: {last_error}")
+
+
+def parse_provider_payload(content: bytes, url: str, provider_name: str) -> list[str]:
+    """Upstream files arrive either as Clash YAML carrying a payload list or as
+    plain text with one entry per line (Sukka's domainset releases, Repcz's
+    .list). Plain text loads from YAML as a multi-line string or not at all,
+    so anything that is not a payload-bearing mapping is parsed per line."""
+    try:
+        parsed = yaml.safe_load(content)
+    except yaml.YAMLError:
+        parsed = None
+    if isinstance(parsed, dict):
+        payload = parsed.get("payload")
+        if isinstance(payload, list):
+            return payload
+        raise ValueError(f"{provider_name}: no payload list at {url}")
+    entries = [
+        line.strip()
+        for line in content.decode("utf-8").splitlines()
+        if line.strip() and not line.strip().startswith("#")
+    ]
+    if not entries:
+        raise ValueError(f"{provider_name}: neither YAML payload nor text rules at {url}")
+    return entries
 
 
 def canonical_source_url(provider: dict[str, Any]) -> str:
@@ -298,10 +327,7 @@ def main() -> None:
             for provider in target_providers:
                 provider_name = provider["name"]
                 url = source_location(provider)
-                parsed = yaml.safe_load(fetch(url))
-                payload = parsed.get("payload") if isinstance(parsed, dict) else None
-                if not isinstance(payload, list):
-                    raise ValueError(f"{provider_name}: no payload list at {url}")
+                payload = parse_provider_payload(fetch(url), url, provider_name)
                 sources_used.add(url)
                 add_rules(
                     drop_overridden(
@@ -317,10 +343,7 @@ def main() -> None:
             for provider in target_providers:
                 provider_name = provider["name"]
                 url = source_location(provider)
-                parsed = yaml.safe_load(fetch(url))
-                payload = parsed.get("payload") if isinstance(parsed, dict) else None
-                if not isinstance(payload, list):
-                    raise ValueError(f"{provider_name}: no payload list at {url}")
+                payload = parse_provider_payload(fetch(url), url, provider_name)
                 sources_used.add(url)
                 add_rules(
                     drop_overridden(

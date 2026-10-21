@@ -63,3 +63,7 @@ payload:
 - IP-CIDR,10.0.0.0/8
 - IP-CIDR,172.16.0.0/12
 - IP-CIDR,192.168.0.0/16
+- DOMAIN-SUFFIX,archlinuxcn.org
+- DOMAIN-SUFFIX,ubuntu.org.cn
+- DOMAIN-SUFFIX,update.microsoft.com
+- DOMAIN-SUFFIX,st.dl.eccdnx.com

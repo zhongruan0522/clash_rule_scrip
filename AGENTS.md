@@ -2,7 +2,7 @@
 
 ## Project overview
 
-- This repository publishes four stable Clash rule-provider links.
+- This repository publishes five stable Clash rule-provider links.
 - `custom/` contains maintainable input: local overrides and upstream source declarations.
 - `dist/` contains generated output for Clash clients. Do not hand-edit it; GitHub Actions refreshes it.
 
@@ -13,6 +13,7 @@ custom/
   upstream.yml       # upstream provider URL, behavior, and output target
   block.yaml         # custom reject rules
   clean-node.yaml    # custom clean-node rules
+  download.yaml      # custom download rules
   foreign-line.yaml  # custom foreign-line rules
   china-direct.yaml  # custom China-direct rules
 dist/               # generated rule packs; workflow-writable output
@@ -31,11 +32,11 @@ scripts/build_rules.py
 
 - Keep source changes in `custom/`. Generated changes belong in `dist/`.
 - Custom rules use classical rule syntax without a policy suffix, for example `DOMAIN-SUFFIX,example.com`; append options such as `,no-resolve` when needed.
-- Valid upstream targets are `REJECT`, `US-ZJ`, `LSDL`, and `DIRECT`.
+- Valid upstream targets are `REJECT`, `US-ZJ`, `DOWNLOAD`, `LSDL`, and `DIRECT`.
 - Valid upstream behaviors are `classical`, `domain`, and `ipcidr`.
-- Preserve category priority: block first, then clean node, foreign line, and China direct.
+- Preserve category priority: block first, then clean node, download, foreign line, and China direct. Download precedes foreign line so download CDN domains win over the platform suffixes there; China-direct custom rules override download upstream entries.
 - Custom rules in `custom/` override every upstream list: at build time, upstream rules fully covered by a custom `DOMAIN`/`DOMAIN-SUFFIX` rule from any category are dropped (logged to stderr). The upstream REJECT list additionally yields to custom rules from all non-REJECT categories.
-- Keep `README.md` at exactly five non-empty lines.
+- Keep `README.md` short: one title, a two-line intro quote, then exactly one link line per published pack.
 
 ## Workflow
 

@@ -17,6 +17,7 @@ on:
       - "custom/clean-node.yaml"
       - "custom/foreign-line.yaml"
       - "custom/china-direct.yaml"
+      - "custom/download.yaml"
       - "scripts/build_rules.py"
       - ".github/workflows/build-rules.yml"
 
@@ -50,7 +51,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain -- dist)" ]; then
-            git add dist/block.yaml dist/clean-node.yaml dist/foreign-line.yaml dist/china-direct.yaml
+            git add dist/block.yaml dist/clean-node.yaml dist/download.yaml dist/foreign-line.yaml dist/china-direct.yaml
             build_stamp="$(TZ=Asia/Shanghai date +'%Y%m%d-%H%M')"
             git commit -m "fix(rule): 更新规则-${build_stamp}"
             git push

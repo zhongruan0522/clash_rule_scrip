@@ -7,6 +7,8 @@
 
 - [线路机器专用](https://raw.githubusercontent.com/zhongruan0522/clash_rule_scrip/main/dist/foreign-line.yaml)：线路节点分流走流量。
 
+- [下载专用](https://raw.githubusercontent.com/zhongruan0522/clash_rule_scrip/main/dist/download.yaml)：游戏/软件/Linux 源等海外下载 CDN 分流。
+
 - [国内直连专用](https://raw.githubusercontent.com/zhongruan0522/clash_rule_scrip/main/dist/china-direct.yaml)：国内直连，避免绕到增加访问延时。
 
 - [广告 & 国家公布恶意域名/IP](https://raw.githubusercontent.com/zhongruan0522/clash_rule_scrip/main/dist/block.yaml)：广告与骚扰拦截。

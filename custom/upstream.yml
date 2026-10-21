@@ -172,6 +172,38 @@ providers:
   target: LSDL
   behavior: classical
   url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AdobeActivation/AdobeActivation.yaml
+- name: GameDownload
+  target: DOWNLOAD
+  behavior: domain
+  url: https://cdn.jsdelivr.net/gh/SukkaLab/ruleset.skk.moe@master/Clash/domainset/game-download.txt
+- name: ObjectStorage
+  target: DOWNLOAD
+  behavior: domain
+  url: https://cdn.jsdelivr.net/gh/SukkaLab/ruleset.skk.moe@master/Clash/domainset/download.txt
+- name: DownloadCDN
+  target: DOWNLOAD
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/Repcz/Tool@X/mihomo/Rules/DownloadCDN_Global.list
+- name: PublicTracker
+  target: DOWNLOAD
+  behavior: domain
+  url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-public-tracker.mrs
+- name: Debian
+  target: DOWNLOAD
+  behavior: domain
+  url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/debian.mrs
+- name: Ubuntu
+  target: DOWNLOAD
+  behavior: domain
+  url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ubuntu.mrs
+- name: ArchLinux
+  target: DOWNLOAD
+  behavior: domain
+  url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/archlinux.mrs
+- name: Fedora
+  target: DOWNLOAD
+  behavior: domain
+  url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/fedora.mrs
 - name: Railway
   target: DIRECT
   behavior: classical
@@ -220,3 +252,7 @@ providers:
   target: DIRECT
   behavior: domain
   url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ctyun.yaml
+- name: DownloadCDNCN
+  target: DIRECT
+  behavior: classical
+  url: https://cdn.jsdelivr.net/gh/Repcz/Tool@X/mihomo/Rules/DownloadCDN_CN.list
