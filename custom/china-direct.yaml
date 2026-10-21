@@ -68,3 +68,14 @@ payload:
 - DOMAIN-SUFFIX,update.microsoft.com
 - DOMAIN-SUFFIX,st.dl.eccdnx.com
 - DOMAIN-SUFFIX,steamcontent.com
+- DOMAIN-SUFFIX,xboxlive.cn
+- DOMAIN-SUFFIX,steamchina.com
+- DOMAIN-SUFFIX,wmsj.cn
+- DOMAIN-SUFFIX,wmsjsteam.com
+- DOMAIN-SUFFIX,8686c.com
+- DOMAIN-SUFFIX,dl.steam.clngaa.com
+- DOMAIN-SUFFIX,dl.steam.ksyna.com
+- DOMAIN-SUFFIX,st.dl.bscstorage.net
+- DOMAIN-SUFFIX,st.dl.pinyuncloud.com
+- DOMAIN-SUFFIX,steamcontent.tnkjmec.com
+- DOMAIN-SUFFIX,mirrors.aliyun.com
