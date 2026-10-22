@@ -95,9 +95,12 @@ payload:
   - PROCESS-NAME,cowork-svc.exe
   - DOMAIN,cdn.growthbook.io
   - DOMAIN,storage.googleapis.com
+  - DOMAIN-SUFFIX,//github.com/aprilnea/reverse-engineering-claude-code-antspace
+  - DOMAIN-SUFFIX,ant.dev
   - DOMAIN-SUFFIX,anthropic.team
   - DOMAIN-SUFFIX,chatbotclaude.com
   - DOMAIN-SUFFIX,claude.dev
+  - DOMAIN-SUFFIX,claudeacademy.com
   - DOMAIN-SUFFIX,interface.feedback
   - DOMAIN-SUFFIX,lcicat.org
   - DOMAIN-SUFFIX,lcicollections.org
