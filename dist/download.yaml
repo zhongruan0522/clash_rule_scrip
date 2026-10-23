@@ -146,6 +146,7 @@ payload:
   - DOMAIN-SUFFIX,yonderly.org
   - DOMAIN-SUFFIX,ziply.mm.fcix.net
   - DOMAIN-SUFFIX,zxcvfdsa.com
+  - DOMAIN-SUFFIX,dl.delivery.xboxlive.com
   - DOMAIN-SUFFIX,cdn.ea.com
   - DOMAIN-SUFFIX,cdn.ubi.com
   - DOMAIN-SUFFIX,dyn.riotcdn.net
