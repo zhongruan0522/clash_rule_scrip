@@ -79,3 +79,32 @@ payload:
 - DOMAIN-SUFFIX,st.dl.pinyuncloud.com
 - DOMAIN-SUFFIX,steamcontent.tnkjmec.com
 - DOMAIN-SUFFIX,mirrors.aliyun.com
+
+# CN mirrors of Ubuntu/Debian/Arch official mirror lists — snapshot 2026-10-23; direct.
+- DOMAIN-SUFFIX,ftp.cn.debian.org
+- DOMAIN-SUFFIX,ftp.sjtu.edu.cn
+- DOMAIN-SUFFIX,mirror.lzu.edu.cn
+- DOMAIN-SUFFIX,mirror.nju.edu.cn
+- DOMAIN-SUFFIX,mirror.nyist.edu.cn
+- DOMAIN-SUFFIX,mirror.sjtu.edu.cn
+- DOMAIN-SUFFIX,mirrors.bfsu.edu.cn
+- DOMAIN-SUFFIX,mirrors.cqu.edu.cn
+- DOMAIN-SUFFIX,mirrors.hit.edu.cn
+- DOMAIN-SUFFIX,mirrors.huaweicloud.com
+- DOMAIN-SUFFIX,mirrors.hust.edu.cn
+- DOMAIN-SUFFIX,mirrors.jcut.edu.cn
+- DOMAIN-SUFFIX,mirrors.jlu.edu.cn
+- DOMAIN-SUFFIX,mirrors.jxust.edu.cn
+- DOMAIN-SUFFIX,mirrors.neusoft.edu.cn
+- DOMAIN-SUFFIX,mirrors.nju.edu.cn
+- DOMAIN-SUFFIX,mirrors.nwafu.edu.cn
+- DOMAIN-SUFFIX,mirrors.qlu.edu.cn
+- DOMAIN-SUFFIX,mirrors.shanghaitech.edu.cn
+- DOMAIN-SUFFIX,mirrors.sjtug.sjtu.edu.cn
+- DOMAIN-SUFFIX,mirrors.sohu.com
+- DOMAIN-SUFFIX,mirrors.tuna.tsinghua.edu.cn
+- DOMAIN-SUFFIX,mirrors.ustc.edu.cn
+- DOMAIN-SUFFIX,mirrors.wsyu.edu.cn
+- DOMAIN-SUFFIX,mirrors.xjtu.edu.cn
+- DOMAIN-SUFFIX,mirrors.zju.edu.cn
+- DOMAIN-SUFFIX,repo.huaweicloud.com
