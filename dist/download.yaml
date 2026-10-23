@@ -1,4 +1,151 @@
 payload:
+  - DOMAIN-SUFFIX,abqix.mm.fcix.net
+  - DOMAIN-SUFFIX,arch-mirror.brightlight.today
+  - DOMAIN-SUFFIX,arch.goober.cloud
+  - DOMAIN-SUFFIX,arch.hu.fo
+  - DOMAIN-SUFFIX,arch.hugeblank.dev
+  - DOMAIN-SUFFIX,arch.miningtcup.me
+  - DOMAIN-SUFFIX,arch.mirror.constant.com
+  - DOMAIN-SUFFIX,arch.mirror.k0.ae
+  - DOMAIN-SUFFIX,arch.mirror.marcusspencer.us
+  - DOMAIN-SUFFIX,archmirror1.octyl.net
+  - DOMAIN-SUFFIX,arlm.tyzoid.com
+  - DOMAIN-SUFFIX,cfhcable.mm.fcix.net
+  - DOMAIN-SUFFIX,codingflyboy.mm.fcix.net
+  - DOMAIN-SUFFIX,cofractal-ewr.mm.fcix.net
+  - DOMAIN-SUFFIX,cofractal-sea.mm.fcix.net
+  - DOMAIN-SUFFIX,coresite-atl.mm.fcix.net
+  - DOMAIN-SUFFIX,coresite.mm.fcix.net
+  - DOMAIN-SUFFIX,debian-archive.trafficmanager.net
+  - DOMAIN-SUFFIX,debian.cc.lehigh.edu
+  - DOMAIN-SUFFIX,debian.cif.rochester.edu
+  - DOMAIN-SUFFIX,debian.csail.mit.edu
+  - DOMAIN-SUFFIX,debian.mirror.constant.com
+  - DOMAIN-SUFFIX,debian.osuosl.org
+  - DOMAIN-SUFFIX,debian.uchicago.edu
+  - DOMAIN-SUFFIX,debpkg.libranext.com
+  - DOMAIN-SUFFIX,dfw.mirror.rackspace.com
+  - DOMAIN-SUFFIX,forksystems.mm.fcix.net
+  - DOMAIN-SUFFIX,ftp.osuosl.org
+  - DOMAIN-SUFFIX,ftp.us.debian.org
+  - DOMAIN-SUFFIX,ftp.ussg.iu.edu
+  - DOMAIN-SUFFIX,gigsouth.mm.fcix.net
+  - DOMAIN-SUFFIX,iad.mirror.rackspace.com
+  - DOMAIN-SUFFIX,iad.mirrors.misaka.one
+  - DOMAIN-SUFFIX,insect.mm.fcix.net
+  - DOMAIN-SUFFIX,irltoolkit.mm.fcix.net
+  - DOMAIN-SUFFIX,isos.ubuntu.mirror.constant.com
+  - DOMAIN-SUFFIX,ix-denver.mm.fcix.net
+  - DOMAIN-SUFFIX,lethe.chinstrap.org
+  - DOMAIN-SUFFIX,lolhost.mm.fcix.net
+  - DOMAIN-SUFFIX,losangeles.mirror.pkgbuild.com
+  - DOMAIN-SUFFIX,lug.mtu.edu
+  - DOMAIN-SUFFIX,m.lqy.me
+  - DOMAIN-SUFFIX,mirror.0x626b.com
+  - DOMAIN-SUFFIX,mirror.141networks.com
+  - DOMAIN-SUFFIX,mirror.adectra.com
+  - DOMAIN-SUFFIX,mirror.akane.network
+  - DOMAIN-SUFFIX,mirror.arizona.edu
+  - DOMAIN-SUFFIX,mirror.clarkson.edu
+  - DOMAIN-SUFFIX,mirror.cogentco.com
+  - DOMAIN-SUFFIX,mirror.colonelhosting.com
+  - DOMAIN-SUFFIX,mirror.cs.jmu.edu
+  - DOMAIN-SUFFIX,mirror.cs.odu.edu
+  - DOMAIN-SUFFIX,mirror.fcix.net
+  - DOMAIN-SUFFIX,mirror.freakinbananas.xyz
+  - DOMAIN-SUFFIX,mirror.givebytes.net
+  - DOMAIN-SUFFIX,mirror.kalem.dev
+  - DOMAIN-SUFFIX,mirror.lstn.net
+  - DOMAIN-SUFFIX,mirror.lug.umbc.edu
+  - DOMAIN-SUFFIX,mirror.math.princeton.edu
+  - DOMAIN-SUFFIX,mirror.metrocast.net
+  - DOMAIN-SUFFIX,mirror.mra.sh
+  - DOMAIN-SUFFIX,mirror.mrjester.net
+  - DOMAIN-SUFFIX,mirror.n5tech.com
+  - DOMAIN-SUFFIX,mirror.nexcess.net
+  - DOMAIN-SUFFIX,mirror.nl2.cdn-perfprod.com
+  - DOMAIN-SUFFIX,mirror.pilotfiber.com
+  - DOMAIN-SUFFIX,mirror.pit.teraswitch.com
+  - DOMAIN-SUFFIX,mirror.pnl.gov
+  - DOMAIN-SUFFIX,mirror.rustytel.net
+  - DOMAIN-SUFFIX,mirror.sfo12.us.leaseweb.net
+  - DOMAIN-SUFFIX,mirror.shomepower.com
+  - DOMAIN-SUFFIX,mirror.siena.edu
+  - DOMAIN-SUFFIX,mirror.steadfast.net
+  - DOMAIN-SUFFIX,mirror.steadfastnet.com
+  - DOMAIN-SUFFIX,mirror.team-cymru.com
+  - DOMAIN-SUFFIX,mirror.techrich.hk
+  - DOMAIN-SUFFIX,mirror.theash.xyz
+  - DOMAIN-SUFFIX,mirror.tzulo.com
+  - DOMAIN-SUFFIX,mirror.umd.edu
+  - DOMAIN-SUFFIX,mirror.us-ny2.kamatera.com
+  - DOMAIN-SUFFIX,mirror.us-sc.kamatera.com
+  - DOMAIN-SUFFIX,mirror.us-tx.kamatera.com
+  - DOMAIN-SUFFIX,mirror.us.cdn-perfprod.com
+  - DOMAIN-SUFFIX,mirror.us.leaseweb.net
+  - DOMAIN-SUFFIX,mirror.us.oneandone.net
+  - DOMAIN-SUFFIX,mirror.us2.cdn-perfprod.com
+  - DOMAIN-SUFFIX,mirror.us3.cdn-perfprod.com
+  - DOMAIN-SUFFIX,mirror.us4.cdn-perfprod.com
+  - DOMAIN-SUFFIX,mirror.us5.cdn-perfprod.com
+  - DOMAIN-SUFFIX,mirror.wdc1.us.leaseweb.net
+  - DOMAIN-SUFFIX,mirror2.givebytes.net
+  - DOMAIN-SUFFIX,mirror3.givebytes.net
+  - DOMAIN-SUFFIX,mirror4.givebytes.net
+  - DOMAIN-SUFFIX,mirrors.accretive-networks.net
+  - DOMAIN-SUFFIX,mirrors.bloomu.edu
+  - DOMAIN-SUFFIX,mirrors.bmcc.edu
+  - DOMAIN-SUFFIX,mirrors.cat.pdx.edu
+  - DOMAIN-SUFFIX,mirrors.egr.msu.edu
+  - DOMAIN-SUFFIX,mirrors.gigenet.com
+  - DOMAIN-SUFFIX,mirrors.iu13.net
+  - DOMAIN-SUFFIX,mirrors.kernel.org
+  - DOMAIN-SUFFIX,mirrors.lahansons.com
+  - DOMAIN-SUFFIX,mirrors.logal.dev
+  - DOMAIN-SUFFIX,mirrors.lug.mtu.edu
+  - DOMAIN-SUFFIX,mirrors.mit.edu
+  - DOMAIN-SUFFIX,mirrors.netmanageit.com
+  - DOMAIN-SUFFIX,mirrors.ocf.berkeley.edu
+  - DOMAIN-SUFFIX,mirrors.rit.edu
+  - DOMAIN-SUFFIX,mirrors.sarak.as
+  - DOMAIN-SUFFIX,mirrors.shr.cx
+  - DOMAIN-SUFFIX,mirrors.sonic.net
+  - DOMAIN-SUFFIX,mirrors.tscak.com
+  - DOMAIN-SUFFIX,mirrors.us.kernel.org
+  - DOMAIN-SUFFIX,mirrors.usinternet.com
+  - DOMAIN-SUFFIX,mirrors.vcea.wsu.edu
+  - DOMAIN-SUFFIX,mirrors.vectair.net
+  - DOMAIN-SUFFIX,mirrors.xmission.com
+  - DOMAIN-SUFFIX,mirrors.xtom.com
+  - DOMAIN-SUFFIX,nnenix.mm.fcix.net
+  - DOMAIN-SUFFIX,nocix.mm.fcix.net
+  - DOMAIN-SUFFIX,nullroute.mm.fcix.net
+  - DOMAIN-SUFFIX,ohioix.mm.fcix.net
+  - DOMAIN-SUFFIX,opencolo.mm.fcix.net
+  - DOMAIN-SUFFIX,ord.mirror.rackspace.com
+  - DOMAIN-SUFFIX,osmirrors.cerias.purdue.edu
+  - DOMAIN-SUFFIX,paducahix.mm.fcix.net
+  - DOMAIN-SUFFIX,plug-mirror.rcac.purdue.edu
+  - DOMAIN-SUFFIX,repo.customcomputercare.com
+  - DOMAIN-SUFFIX,repo.ialab.dsu.edu
+  - DOMAIN-SUFFIX,ryamer.mm.fcix.net
+  - DOMAIN-SUFFIX,solidrock.mm.fcix.net
+  - DOMAIN-SUFFIX,southfront.mm.fcix.net
+  - DOMAIN-SUFFIX,ubuntu-releases.confluxtech.com
+  - DOMAIN-SUFFIX,ubuntu.cs.utah.edu
+  - DOMAIN-SUFFIX,ubuntu.mirror.shastacoe.net
+  - DOMAIN-SUFFIX,ubuntu.mirrors.hoobly.com
+  - DOMAIN-SUFFIX,ubuntu.mirrors.pair.com
+  - DOMAIN-SUFFIX,ubuntu.osuosl.org
+  - DOMAIN-SUFFIX,us-mnz.soulharsh007.dev
+  - DOMAIN-SUFFIX,us.mirrors.cicku.me
+  - DOMAIN-SUFFIX,us.mirrors.mk
+  - DOMAIN-SUFFIX,veronanetworks.mm.fcix.net
+  - DOMAIN-SUFFIX,volico.mm.fcix.net
+  - DOMAIN-SUFFIX,www.gtlib.gatech.edu
+  - DOMAIN-SUFFIX,yonderly.org
+  - DOMAIN-SUFFIX,ziply.mm.fcix.net
+  - DOMAIN-SUFFIX,zxcvfdsa.com
   - DOMAIN-SUFFIX,cdn.ea.com
   - DOMAIN-SUFFIX,cdn.ubi.com
   - DOMAIN-SUFFIX,dyn.riotcdn.net
@@ -312,7 +459,6 @@ payload:
   - DOMAIN,ftp.gnu.org.ua
   - DOMAIN,ftp.icm.edu.pl
   - DOMAIN,ftp.iitm.ac.in
-  - DOMAIN,ftp.osuosl.org
   - DOMAIN,ftp.rediris.es
   - DOMAIN,ftp.sh.cvut.cz
   - DOMAIN,ftp.stu.edu.tw
@@ -350,7 +496,6 @@ payload:
   - DOMAIN,mirror.uepg.br
   - DOMAIN,mirror.ufro.cl
   - DOMAIN,mirror.uic.edu
-  - DOMAIN,mirror.umd.edu
   - DOMAIN,mirror.unet.by
   - DOMAIN,mirror.usi.edu
   - DOMAIN,mirror.vcu.edu
@@ -425,7 +570,6 @@ payload:
   - DOMAIN,ftp.stw-bonn.de
   - DOMAIN,ftp.task.gda.pl
   - DOMAIN,ftp.univ-pau.fr
-  - DOMAIN,ftp.ussg.iu.edu
   - DOMAIN-SUFFIX,getcomposer.org
   - DOMAIN,gnualpha.uib.no
   - DOMAIN,http.krfoss.org
@@ -442,7 +586,6 @@ payload:
   - DOMAIN,mirror.efect.ro
   - DOMAIN,mirror.elice.io
   - DOMAIN,mirror.enzu.com
-  - DOMAIN,mirror.fcix.net
   - DOMAIN,mirror.gi.co.id
   - DOMAIN,mirror.ihost.md
   - DOMAIN,mirror.in2p3.fr
@@ -470,9 +613,7 @@ payload:
   - DOMAIN,mirrors.bkns.vn
   - DOMAIN,mirrors.cat.net
   - DOMAIN,mirrors.m247.ro
-  - DOMAIN,mirrors.mit.edu
   - DOMAIN-SUFFIX,mirrors.ovh.net
-  - DOMAIN,mirrors.rit.edu
   - DOMAIN-SUFFIX,mirrors.tds.net
   - DOMAIN-SUFFIX,mirrors.uk2.net
   - DOMAIN,mirrors.upr.edu
@@ -584,7 +725,6 @@ payload:
   - DOMAIN,mirror.netone.nl
   - DOMAIN,mirror.pregi.net
   - DOMAIN,mirror.sh.com.tr
-  - DOMAIN,mirror.siena.edu
   - DOMAIN,mirror.siwoo.org
   - DOMAIN,mirror.solnet.ch
   - DOMAIN,mirror.switch.ch
@@ -597,17 +737,13 @@ payload:
   - DOMAIN,mirror1.ku.ac.th
   - DOMAIN,mirrors.asnet.am
   - DOMAIN-SUFFIX,mirrors.blix.com
-  - DOMAIN,mirrors.bmcc.edu
   - DOMAIN-SUFFIX,mirrors.cicku.me
   - DOMAIN,mirrors.ircam.fr
-  - DOMAIN,mirrors.iu13.net
   - DOMAIN-SUFFIX,mirrors.linux.ro
   - DOMAIN-SUFFIX,mirrors.pair.com
   - DOMAIN,mirrors.ptisp.pt
-  - DOMAIN,mirrors.sarak.as
   - DOMAIN,mirrors.tino.org
   - DOMAIN,mirrors.webhs.pt
-  - DOMAIN,mirrors.xtom.com
   - DOMAIN-SUFFIX,ports.ubuntu.com
   - DOMAIN,proxy.golang.org
   - DOMAIN-SUFFIX,pythonhosted.org
@@ -649,7 +785,6 @@ payload:
   - DOMAIN,debian.ludost.net
   - DOMAIN,debian.mithril.re
   - DOMAIN,debian.nautile.nc
-  - DOMAIN,debian.osuosl.org
   - DOMAIN,debian.proxad.net
   - DOMAIN,desktop.figma.com
   - DOMAIN,directory.fsf.org
@@ -672,7 +807,6 @@ payload:
   - DOMAIN,ftp.ca.debian.org
   - DOMAIN,ftp.ch.debian.org
   - DOMAIN,ftp.cl.debian.org
-  - DOMAIN,ftp.cn.debian.org
   - DOMAIN,ftp.cz.debian.org
   - DOMAIN,ftp.de.debian.org
   - DOMAIN,ftp.dk.debian.org
@@ -708,19 +842,15 @@ payload:
   - DOMAIN,ftp.ubuntu-tw.org
   - DOMAIN,ftp.udx.icscoe.jp
   - DOMAIN,ftp.uk.debian.org
-  - DOMAIN,ftp.us.debian.org
   - DOMAIN,ftpmirror.gnu.org
   - DOMAIN,gnu.askapache.com
   - DOMAIN,google.golang.org
   - DOMAIN-SUFFIX,linodeobjects.com
   - DOMAIN,linuxsoft.cern.ch
   - DOMAIN,mcr.microsoft.com
-  - DOMAIN,mirror.0x626b.com
   - DOMAIN,mirror.23media.de
   - DOMAIN,mirror.bg.host.ag
   - DOMAIN,mirror.chmuri.net
-  - DOMAIN,mirror.cs.jmu.edu
-  - DOMAIN,mirror.cs.odu.edu
   - DOMAIN,mirror.faraso.org
   - DOMAIN,mirror.flo.c-f.ro
   - DOMAIN-SUFFIX,mirror.globo.tech
@@ -759,7 +889,6 @@ payload:
   - DOMAIN,mirrors.cmich.edu
   - DOMAIN,mirrors.maine.edu
   - DOMAIN,mirrors.netix.net
-  - DOMAIN,mirrors.sonic.net
   - DOMAIN,mirrors.ucr.ac.cr
   - DOMAIN-SUFFIX,mirrorservice.org
   - DOMAIN-SUFFIX,mvnrepository.com
@@ -785,7 +914,6 @@ payload:
   - DOMAIN,ubuntu.ipacct.com
   - DOMAIN,ubuntu.koyanet.lv
   - DOMAIN-SUFFIX,ubuntu.nautile.nc
-  - DOMAIN,ubuntu.osuosl.org
   - DOMAIN,ubuntu.tuxuri.com
   - DOMAIN,ubuntu.unc.edu.ar
   - DOMAIN,ubuntu.vpsttt.com
@@ -844,7 +972,6 @@ payload:
   - DOMAIN,mirror.alastyr.com
   - DOMAIN,mirror.alwyzon.net
   - DOMAIN,mirror.aptus.co.tz
-  - DOMAIN,mirror.arizona.edu
   - DOMAIN,mirror.as29550.net
   - DOMAIN,mirror.as35701.net
   - DOMAIN,mirror.as43289.net
@@ -887,7 +1014,6 @@ payload:
   - DOMAIN,mirror.xtom.com.hk
   - DOMAIN,mirror.yuki.net.uk
   - DOMAIN,mirror2.krfoss.org
-  - DOMAIN,mirrors.bloomu.edu
   - DOMAIN,mirrors.coreix.net
   - DOMAIN-SUFFIX,mirrors.dotsrc.org
   - DOMAIN,mirrors.glesys.net
@@ -896,7 +1022,6 @@ payload:
   - DOMAIN,mirrors.hopbox.net
   - DOMAIN,mirrors.hostico.ro
   - DOMAIN,mirrors.iitd.ac.in
-  - DOMAIN,mirrors.kernel.org
   - DOMAIN,mirrors.nxtgen.com
   - DOMAIN,mirrors.sarata.com
   - DOMAIN,mirrors.saswata.cc
@@ -906,7 +1031,6 @@ payload:
   - DOMAIN,pkgs.tailscale.com
   - DOMAIN,registry.npmjs.com
   - DOMAIN,registry.npmjs.org
-  - DOMAIN,repo.ialab.dsu.edu
   - DOMAIN,repo.sleeping.town
   - DOMAIN,repo2.shinjiru.com
   - DOMAIN-SUFFIX,s3-1.amazonaws.com
@@ -914,7 +1038,6 @@ payload:
   - DOMAIN,stats.snipaste.com
   - DOMAIN,sunsite.icm.edu.pl
   - DOMAIN-SUFFIX,swupdate.chaos.com
-  - DOMAIN,ubuntu.cs.utah.edu
   - DOMAIN,ubuntu.man.lodz.pl
   - DOMAIN-SUFFIX,ubuntu.moon127.net
   - DOMAIN,ubuntu.parsvds.com
@@ -937,7 +1060,6 @@ payload:
   - DOMAIN,cpan.inspire.net.nz
   - DOMAIN,debian.c3sl.ufpr.br
   - DOMAIN,debian.linux.n0c.ca
-  - DOMAIN,debian.uchicago.edu
   - DOMAIN,desktop.wifiman.com
   - DOMAIN,download.bazzite.gg
   - DOMAIN,download.bbbike.org
@@ -968,7 +1090,6 @@ payload:
   - DOMAIN-SUFFIX,ks3-rus.ksyuncs.com
   - DOMAIN-SUFFIX,ks3-sgp.ksyuncs.com
   - DOMAIN,launcher.mojang.com
-  - DOMAIN,lethe.chinstrap.org
   - DOMAIN,lidsol.fi-b.unam.mx
   - DOMAIN,maven.neoforged.net
   - DOMAIN,merlin.fit.vutbr.cz
@@ -977,8 +1098,6 @@ payload:
   - DOMAIN,mirror.archlinux.tw
   - DOMAIN,mirror.blue3.com.br
   - DOMAIN,mirror.cedia.org.ec
-  - DOMAIN-SUFFIX,mirror.clarkson.edu
-  - DOMAIN,mirror.cogentco.com
   - DOMAIN-SUFFIX,mirror.constant.com
   - DOMAIN,mirror.creoline.net
   - DOMAIN,mirror.cyberbits.eu
@@ -1001,14 +1120,12 @@ payload:
   - DOMAIN,mirror.linux.org.au
   - DOMAIN,mirror.macomnet.net
   - DOMAIN,mirror.mirohost.net
-  - DOMAIN,mirror.mrjester.net
   - DOMAIN,mirror.netzwerge.de
   - DOMAIN-SUFFIX,mirror.pkgbuild.com
   - DOMAIN,mirror.plusline.net
   - DOMAIN,mirror.pmf.kg.ac.rs
   - DOMAIN,mirror.quickhost.uk
   - DOMAIN,mirror.reenigne.net
-  - DOMAIN,mirror.rustytel.net
   - DOMAIN,mirror.sabay.com.kh
   - DOMAIN-SUFFIX,mirror.serveriai.lt
   - DOMAIN,mirror.sitsa.com.ar
@@ -1024,16 +1141,12 @@ payload:
   - DOMAIN,mirror4.twds.com.tw
   - DOMAIN,mirror6.twds.com.tw
   - DOMAIN,mirrors.c0urier.net
-  - DOMAIN,mirrors.cat.pdx.edu
   - DOMAIN,mirrors.datapark.ro
-  - DOMAIN,mirrors.egr.msu.edu
   - DOMAIN,mirrors.evoluso.com
   - DOMAIN,mirrors.evowise.com
   - DOMAIN,mirrors.fibianet.dk
-  - DOMAIN,mirrors.gigenet.com
   - DOMAIN,mirrors.ibiblio.org
   - DOMAIN-SUFFIX,mirrors.ionfish.org
-  - DOMAIN,mirrors.lug.mtu.edu
   - DOMAIN,mirrors.myaegean.gr
   - DOMAIN,mirrors.neterra.net
   - DOMAIN,mirrors.nhanhoa.com
@@ -1089,8 +1202,6 @@ payload:
   - DOMAIN,cpan.excellmedia.net
   - DOMAIN,ctan.tetaneutral.net
   - DOMAIN,debian.apt-mirror.de
-  - DOMAIN,debian.cc.lehigh.edu
-  - DOMAIN,debian.csail.mit.edu
   - DOMAIN,debian.intergenia.de
   - DOMAIN,debian.netcologne.de
   - DOMAIN,debian.pop-sc.rnp.br
@@ -1142,7 +1253,6 @@ payload:
   - DOMAIN,mirror.its.umich.edu
   - DOMAIN,mirror.low-orbit.net
   - DOMAIN,mirror.mangohost.net
-  - DOMAIN,mirror.metrocast.net
   - DOMAIN,mirror.navercorp.com
   - DOMAIN,mirror.netcologne.de
   - DOMAIN,mirror.nevacloud.com
@@ -1156,7 +1266,6 @@ payload:
   - DOMAIN,mirror.serverion.com
   - DOMAIN,mirror.serverloft.eu
   - DOMAIN-SUFFIX,mirror.shastacoe.net
-  - DOMAIN,mirror.steadfast.net
   - DOMAIN,mirror.webtastix.net
   - DOMAIN-SUFFIX,mirror.zzunipark.com
   - DOMAIN,mirror2.keiminem.com
@@ -1168,8 +1277,6 @@ payload:
   - DOMAIN,mirrors.storpool.com
   - DOMAIN,mirrors.teamcloud.am
   - DOMAIN,mirrors.ukfast.co.uk
-  - DOMAIN,mirrors.vcea.wsu.edu
-  - DOMAIN,mirrors.xmission.com
   - DOMAIN,mirrors.yuntu.com.tw
   - DOMAIN,registry-1.docker.io
   - DOMAIN,registry-cdn.wapm.io
@@ -1187,7 +1294,6 @@ payload:
   - DOMAIN,updater.snipaste.com
   - DOMAIN,updates.openlogi.org
   - DOMAIN,version.cyberduck.io
-  - DOMAIN,www.gtlib.gatech.edu
   - DOMAIN-SUFFIX,blob.core.windows.net
   - DOMAIN,cache.pack.google.com
   - DOMAIN-SUFFIX,cloudflare.docker.com
@@ -1234,11 +1340,9 @@ payload:
   - DOMAIN,mirror.keystealth.org
   - DOMAIN,mirror.linux-ia64.org
   - DOMAIN,mirror.linux.ncsu.edu
-  - DOMAIN,mirror.pilotfiber.com
   - DOMAIN,mirror.plusserver.com
   - DOMAIN,mirror.realcompute.io
   - DOMAIN,mirror.stjschools.org
-  - DOMAIN,mirror.team-cymru.com
   - DOMAIN,mirror.team-cymru.org
   - DOMAIN,mirror.techlabs.co.kr
   - DOMAIN-SUFFIX,mirror.thegigabit.com
@@ -1254,7 +1358,6 @@ payload:
   - DOMAIN,mirrors.opensource.is
   - DOMAIN,mirrors.rpmfusion.org
   - DOMAIN-SUFFIX,mirrors.spacedump.net
-  - DOMAIN,mirrors.us.kernel.org
   - DOMAIN,mirrors.xmissions.com
   - DOMAIN,os-cdn.virtfusion.net
   - DOMAIN,packages.codeberg.org
@@ -1334,7 +1437,6 @@ payload:
   - DOMAIN,mirror.scaleuptech.com
   - DOMAIN,mirror.softaculous.com
   - DOMAIN-SUFFIX,mirror.uk.sargasso.net
-  - DOMAIN,mirror.us.leaseweb.net
   - DOMAIN,mirror.ventraip.net.au
   - DOMAIN-SUFFIX,mirror.vhosting-it.com
   - DOMAIN,mirror.viettelcloud.vn
@@ -1343,7 +1445,6 @@ payload:
   - DOMAIN,mirror1.infomaniak.com
   - DOMAIN,mirror2.infomaniak.com
   - DOMAIN,mirrors.pidginhost.com
-  - DOMAIN,mirrors.usinternet.com
   - DOMAIN,opensource.nchc.org.tw
   - DOMAIN,packages-cf.termux.dev
   - DOMAIN,packages.linuxmint.com
@@ -1412,7 +1513,6 @@ payload:
   - DOMAIN-SUFFIX,mirror.norbert-ruehl.de
   - DOMAIN,mirror.primelink.net.id
   - DOMAIN,mirror.tw.ossplanet.net
-  - DOMAIN,mirror.us.oneandone.net
   - DOMAIN,mirrors.arpnetworks.com
   - DOMAIN,mirrors.binaryracks.com
   - DOMAIN,mirrors.concertpass.com
@@ -1473,7 +1573,6 @@ payload:
   - DOMAIN,mirror.za.web4africa.net
   - DOMAIN,mirrorbits.lineageos.org
   - DOMAIN,mirrors.gethosted.online
-  - DOMAIN,mirrors.ocf.berkeley.edu
   - DOMAIN,ota-cache1.googlezip.net
   - DOMAIN,pkg.cloudflareclient.com
   - DOMAIN,planet.openstreetmap.org
@@ -1510,14 +1609,10 @@ payload:
   - DOMAIN,mirror.il-rh.kamatera.com
   - DOMAIN,mirror.il-ta.kamatera.com
   - DOMAIN,mirror.jax.hugeserver.com
-  - DOMAIN,mirror.math.princeton.edu
   - DOMAIN,mirror.mia.velocihost.net
   - DOMAIN,mirror.overthewire.com.au
-  - DOMAIN,mirror.pit.teraswitch.com
   - DOMAIN,mirror.raiolanetworks.com
   - DOMAIN,mirror.sov.uk.goscomb.net
-  - DOMAIN,mirror.us-sc.kamatera.com
-  - DOMAIN,mirror.us-tx.kamatera.com
   - DOMAIN,mirrors.cloudforest.co.th
   - DOMAIN,mirrors.codec-cluster.org
   - DOMAIN,mirrors.de.sahilister.net
@@ -1545,8 +1640,6 @@ payload:
   - DOMAIN,mirror.fr.cdn-perfprod.com
   - DOMAIN,mirror.nl.cdn-perfprod.com
   - DOMAIN,mirror.unimagdalena.edu.co
-  - DOMAIN,mirror.us-ny2.kamatera.com
-  - DOMAIN,mirror.us.cdn-perfprod.com
   - DOMAIN,mirror2.evolution-host.com
   - DOMAIN,mirrors.linux-bulgaria.org
   - DOMAIN,mirrors.ubuntu.dimit.cloud
@@ -1598,7 +1691,6 @@ payload:
   - DOMAIN,mirror.united-gameserver.de
   - DOMAIN,mirrors.advancedhosters.com
   - DOMAIN-SUFFIX,oss-ap-south-1.aliyuncs.com
-  - DOMAIN,plug-mirror.rcac.purdue.edu
   - DOMAIN-SUFFIX,s3-accelerate.amazonaws.com
   - DOMAIN-SUFFIX,s3-ap-south-1.amazonaws.com
   - DOMAIN-SUFFIX,s3-eu-north-1.amazonaws.com
@@ -1664,7 +1756,6 @@ payload:
   - DOMAIN,downloads.cloudflareclient.com
   - DOMAIN,files2.freedownloadmanager.org
   - DOMAIN-SUFFIX,mirror.serversaustralia.com.au
-  - DOMAIN,mirrors.accretive-networks.net
   - DOMAIN-SUFFIX,public.blob.vercel-storage.com
   - DOMAIN-SUFFIX,s3-us-gov-east-1.amazonaws.com
   - DOMAIN-SUFFIX,s3-us-gov-west-1.amazonaws.com
@@ -1713,7 +1804,6 @@ payload:
   - DOMAIN,steamdeck-packages.steamos.cloud
   - DOMAIN,assets-production.packagecloud.io
   - DOMAIN-SUFFIX,cos.na-siliconvalley.myqcloud.com
-  - DOMAIN,debian-archive.trafficmanager.net
   - DOMAIN,mirror.freethought-internet.co.uk
   - DOMAIN,oss-binaries.phusionpassenger.com
   - DOMAIN,speedtest-net-servers.cdn.skk.moe
