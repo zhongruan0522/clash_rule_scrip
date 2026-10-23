@@ -148,3 +148,5 @@ payload:
 - DOMAIN-SUFFIX,yonderly.org
 - DOMAIN-SUFFIX,ziply.mm.fcix.net
 - DOMAIN-SUFFIX,zxcvfdsa.com
+# Xbox content delivery, ranked ahead of the xboxlive.com suffix in foreign-line.
+- DOMAIN-SUFFIX,dl.delivery.xboxlive.com
