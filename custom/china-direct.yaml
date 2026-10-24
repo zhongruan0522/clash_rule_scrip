@@ -108,3 +108,6 @@ payload:
 - DOMAIN-SUFFIX,mirrors.xjtu.edu.cn
 - DOMAIN-SUFFIX,mirrors.zju.edu.cn
 - DOMAIN-SUFFIX,repo.huaweicloud.com
+
+# Dameng Database (达梦) official site, docs and downloads — direct; snapshot 2026-10-24.
+- DOMAIN-SUFFIX,dameng.com
