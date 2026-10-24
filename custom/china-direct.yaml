@@ -111,3 +111,24 @@ payload:
 
 # Dameng Database (达梦) official site, docs and downloads — direct; snapshot 2026-10-24.
 - DOMAIN-SUFFIX,dameng.com
+
+# ByteDance CN service endpoints (snssdk/isnssdk data APIs, douyin web CDN,
+# TOS object storage, CSJ/Pangle ad platform) and Baidu cloud-accelerate CDN,
+# all missing from geosite cn lists — direct; snapshot 2026-10-24.
+- DOMAIN-SUFFIX,snssdk.com
+- DOMAIN-SUFFIX,isnssdk.com
+- DOMAIN-SUFFIX,tikwcdn.com
+- DOMAIN-SUFFIX,ibytedtos.com
+- DOMAIN-SUFFIX,byteintlapi.com
+- DOMAIN-SUFFIX,csjplatform.com
+- DOMAIN-SUFFIX,toutiaopage.com
+- DOMAIN-SUFFIX,pglstatp-toutiao.com
+- DOMAIN-SUFFIX,pglstatp-toutiao-b.com
+- DOMAIN-SUFFIX,pangolin-dsp-toutiao.com
+- DOMAIN-SUFFIX,pangolin-dsp-toutiao-b.com
+- DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+- DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com
+- DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
+- DOMAIN-SUFFIX,panplayable-toutiao.com
+- DOMAIN-SUFFIX,panplayable-toutiao-b.com
+- DOMAIN-SUFFIX,yunjiasu.com
