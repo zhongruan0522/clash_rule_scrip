@@ -106,6 +106,24 @@ payload:
   - DOMAIN-SUFFIX,mirrors.xjtu.edu.cn
   - DOMAIN-SUFFIX,mirrors.zju.edu.cn
   - DOMAIN-SUFFIX,repo.huaweicloud.com
+  - DOMAIN-SUFFIX,dameng.com
+  - DOMAIN-SUFFIX,snssdk.com
+  - DOMAIN-SUFFIX,isnssdk.com
+  - DOMAIN-SUFFIX,tikwcdn.com
+  - DOMAIN-SUFFIX,ibytedtos.com
+  - DOMAIN-SUFFIX,byteintlapi.com
+  - DOMAIN-SUFFIX,csjplatform.com
+  - DOMAIN-SUFFIX,toutiaopage.com
+  - DOMAIN-SUFFIX,pglstatp-toutiao.com
+  - DOMAIN-SUFFIX,pglstatp-toutiao-b.com
+  - DOMAIN-SUFFIX,pangolin-dsp-toutiao.com
+  - DOMAIN-SUFFIX,pangolin-dsp-toutiao-b.com
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
+  - DOMAIN-SUFFIX,panplayable-toutiao.com
+  - DOMAIN-SUFFIX,panplayable-toutiao-b.com
+  - DOMAIN-SUFFIX,yunjiasu.com
   - DOMAIN-SUFFIX,12306.cn
   - DOMAIN-SUFFIX,95306.cn
   - DOMAIN-SUFFIX,95572.com
@@ -31143,7 +31161,6 @@ payload:
   - DOMAIN-SUFFIX,damddos.com
   - DOMAIN-SUFFIX,dameisheng.com
   - DOMAIN-SUFFIX,dameiweb.com
-  - DOMAIN-SUFFIX,dameng.com
   - DOMAIN-SUFFIX,damiercapital.com
   - DOMAIN-SUFFIX,damijing.com
   - DOMAIN-SUFFIX,damingweb.com
