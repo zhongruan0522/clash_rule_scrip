@@ -7,7 +7,6 @@ payload:
   - DOMAIN-KEYWORD,qq
   - DOMAIN-KEYWORD,netease
   - DOMAIN-SUFFIX,minimaxi.com
-  - DOMAIN-SUFFIX,zread.ai
   - DOMAIN-SUFFIX,rainplay.cn
   - DOMAIN-SUFFIX,ruancang.net
   - DOMAIN-SUFFIX,zhipuai.cn
@@ -34,12 +33,9 @@ payload:
   - DOMAIN-SUFFIX,open-vsx.org
   - DOMAIN-SUFFIX,edu.cn
   - DOMAIN-SUFFIX,nookmux.com
-  - DOMAIN-SUFFIX,z.ai
   - DOMAIN-SUFFIX,bigmodel.cn
   - DOMAIN-SUFFIX,chatglm.cn
   - DOMAIN-SUFFIX,chatglm.com
-  - DOMAIN-SUFFIX,zhipucn.com
-  - DOMAIN-SUFFIX,aminer.cn
   - DOMAIN-SUFFIX,kurobbs.com
   - DOMAIN-SUFFIX,kurogame.com
   - DOMAIN-SUFFIX,kurogame.net
@@ -59,10 +55,6 @@ payload:
   - DOMAIN-SUFFIX,mingchao.com
   - DOMAIN-SUFFIX,mingchaoonline.com
   - DOMAIN-SUFFIX,mingchaoyouxi.com
-  - IP-CIDR,127.0.0.0/8
-  - IP-CIDR,10.0.0.0/8
-  - IP-CIDR,172.16.0.0/12
-  - IP-CIDR,192.168.0.0/16
   - DOMAIN-SUFFIX,archlinuxcn.org
   - DOMAIN-SUFFIX,ubuntu.org.cn
   - DOMAIN-SUFFIX,update.microsoft.com
@@ -4626,6 +4618,8 @@ payload:
   - DOMAIN-SUFFIX,xiaomimimo.com
   - DOMAIN-SUFFIX,mcpworld.com
   - DOMAIN-SUFFIX,tiangong.cn
+  - DOMAIN-SUFFIX,z.ai
+  - DOMAIN-SUFFIX,zhipucn.com
   - DOMAIN-SUFFIX,kimi.com
   - DOMAIN-SUFFIX,moonshot.cn
   - DOMAIN-SUFFIX,xiaoaiassist.com
@@ -121752,13 +121746,17 @@ payload:
   - IP-CIDR6,2c0f:f7a8:8211::/48
   - IP-CIDR6,2c0f:f7a8:9041::/48
   - IP-CIDR,0.0.0.0/8
+  - IP-CIDR,10.0.0.0/8
   - IP-CIDR,100.64.0.0/10
+  - IP-CIDR,127.0.0.0/8
   - IP-CIDR,169.254.0.0/16
+  - IP-CIDR,172.16.0.0/12
   - IP-CIDR,192.0.0.0/24
   - IP-CIDR,192.0.2.0/24
   - IP-CIDR,192.31.196.0/24
   - IP-CIDR,192.52.193.0/24
   - IP-CIDR,192.88.99.0/24
+  - IP-CIDR,192.168.0.0/16
   - IP-CIDR,198.18.0.0/15
   - IP-CIDR,198.51.100.0/24
   - IP-CIDR,203.0.113.0/24
