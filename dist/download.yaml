@@ -538,6 +538,7 @@ payload:
   - DOMAIN,apache.uvigo.es
   - DOMAIN,apt.izzysoft.de
   - DOMAIN,c.1password.com
+  - DOMAIN,cdn.altstore.io
   - DOMAIN,cpan.stu.edu.tw
   - DOMAIN,cpan.webdesk.ru
   - DOMAIN,ctan.ebinger.cc
