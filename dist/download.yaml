@@ -313,7 +313,6 @@ payload:
   - DOMAIN,ftp.eq.uc.pt
   - DOMAIN,ftp.funet.fi
   - DOMAIN,ftp.is.co.za
-  - DOMAIN,ftp.ktug.org
   - DOMAIN,ftp.lanet.kr
   - DOMAIN,ftp.linux.cz
   - DOMAIN,ftp.linux.it
@@ -933,7 +932,6 @@ payload:
   - DOMAIN,cisco.yuntu.com.tw
   - DOMAIN,cpan-mirror.rbc.ru
   - DOMAIN,cpan.dcc.uchile.cl
-  - DOMAIN,cpan.mines-albi.fr
   - DOMAIN,ctan.dcc.uchile.cl
   - DOMAIN,ctan.math.utah.edu
   - DOMAIN,ctan.mines-albi.fr
@@ -1562,10 +1560,8 @@ payload:
   - DOMAIN,mirror.digitaloceans.dev
   - DOMAIN,mirror.dimensiondata.com
   - DOMAIN,mirror.grid.uchicago.edu
-  - DOMAIN,mirror.library.ucy.ac.cy
   - DOMAIN-SUFFIX,mirror.liquidtelecom.com
   - DOMAIN,mirror.mythic-beasts.com
-  - DOMAIN,mirror.netcologne.de.org
   - DOMAIN,mirror.ubuntu.ikoula.com
   - DOMAIN,mirror.unix-solutions.be
   - DOMAIN,mirror.us.mirhosting.net
@@ -1687,7 +1683,6 @@ payload:
   - DOMAIN,mirror.domainhizmetleri.com
   - DOMAIN,mirror.improve.nordlo.cloud
   - DOMAIN,mirror.retentionrange.co.bw
-  - DOMAIN,mirror.thunderhosting.cloud
   - DOMAIN,mirror.united-gameserver.de
   - DOMAIN,mirrors.advancedhosters.com
   - DOMAIN-SUFFIX,oss-ap-south-1.aliyuncs.com
